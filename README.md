@@ -1,7 +1,7 @@
 # Cursos
  Local destinado a guardar comandos, informações e dados que são aprendidos durante os cursos.
- 
- Também é um lugar para guardar informações/exercícios realizados de forma autodita. 
+
+ Também é um lugar para guardar informações/exercícios realizados de forma autodidata. 
 
 Cursos realizados:
 
