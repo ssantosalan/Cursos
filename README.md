@@ -11,5 +11,6 @@ Cursos realizados:
     • Git e GitHub [20 Horas]
     
 Cursando:
-
+    • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
+    
     • JAVA Básico  [40 Horas]
