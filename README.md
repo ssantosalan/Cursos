@@ -20,5 +20,5 @@ Cursando:
 
     • HTML and CSS 
 
-URI:
-    Are some exercises done in the site <a href="https://www.urionlinejudge.com.br">Uri</a>
+<h2>URI:</h2>
+    There are some exercises done in the site <a href="https://www.urionlinejudge.com.br">Uri</a>
