@@ -15,3 +15,10 @@ Cursando:
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
 
     • JAVA Básico  [40 Horas]
+
+    • C#
+
+    • HTML and CSS 
+
+URI:
+    Are some exercises done in the site <a href="https://www.urionlinejudge.com.br">Uri</a>
