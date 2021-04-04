@@ -25,5 +25,5 @@
 
 <strong>html-css</strong>
 
-    <p>• In the html-css folder, there are some exercises done while studying the language.</p>
+<p>• In the html-css folder, there are some exercises done while studying the language.</p>
     
