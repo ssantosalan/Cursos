@@ -20,6 +20,6 @@
 
     • HTML and CSS 
 
-<strong>URI:</strong>
-
-    There are some exercises done in the site <a href="https://www.urionlinejudge.com.br">Uri</a>
+<strong>URI:</strong><br>
+    • There are some exercises done in the site <a href="https://www.urionlinejudge.com.br">URI</a>
+    
