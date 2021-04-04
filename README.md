@@ -21,5 +21,5 @@
     • HTML and CSS 
 
 <strong>URI:</strong><br>
-    • There are some exercises done in the site <a href="https://www.urionlinejudge.com.br">URI</a>
+    • In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>
     
