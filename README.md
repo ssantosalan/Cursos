@@ -3,7 +3,6 @@
  It is also a place to store information / exercises done by me.</p>
 
  <p>Local destinado a guardar comandos, informações e dados que são aprendidos durante os cursos.<br>
-
  Também é um lugar para guardar informações / exercícios realizados de forma autodidata.</p> 
 
 <strong>Cursos realizados:</strong>
