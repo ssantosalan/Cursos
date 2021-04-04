@@ -3,14 +3,14 @@
 
  Também é um lugar para guardar informações/exercícios realizados de forma autodidata. 
 
-Cursos realizados:
+<strong>Cursos realizados:</strong>
 
     • Curso de Fundamentos de Lógica de Programação [15 Horas]
     • Curso de Algoritmos [40 Horas]
     • Curso de Introdução à Programação Orientada a Objetos (POO) [10 Horas]
     • Git e GitHub [20 Horas]
     
-Cursando:
+<strong>Cursando:</strong>
 
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
 
@@ -20,5 +20,5 @@ Cursando:
 
     • HTML and CSS 
 
-<h2>URI:</h2>
+<strong>URI:</strong>
     There are some exercises done in the site <a href="https://www.urionlinejudge.com.br">Uri</a>
