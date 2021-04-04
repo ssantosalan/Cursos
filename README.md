@@ -1,6 +1,6 @@
 # Cursos
- Place to store commands, information and data that are learned during the courses.
- It is also a place to store information / exercises done by me.
+ <p>Place to store commands, information and data that are learned during the courses.</p>
+ <p>It is also a place to store information / exercises done by me.</p>
 
  Local destinado a guardar comandos, informações e dados que são aprendidos durante os cursos.
 
