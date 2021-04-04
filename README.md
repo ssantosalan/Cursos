@@ -23,7 +23,7 @@
 <strong>URI:</strong><br>
     • In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>
 
-<strong>html-css</strong>
+<strong>html-css:</strong>
 
 <p>• In the html-css folder, there are some exercises done while studying the language.</p>
     
