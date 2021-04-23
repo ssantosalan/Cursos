@@ -16,19 +16,13 @@
     • HTML [17 horas]
     • HTML5 e CSS [40 horas]
     • Pacote Office 2010 
-    <li> MS Excel [54 horas]</li>
-    <li> MS Outlook [11 horas]</li>
-    <li> PowerPoint [52 horas]</li>
+        MS Excel [54 horas]
+        MS Outlook [11 horas]
+        PowerPoint [52 horas]
 
 <strong>Cursando:</strong>
 
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
-
-    • JAVA Básico  [40 Horas]
-
-    • C#
-
-    • HTML and CSS 
 
 <strong>URI:</strong><br>
     • In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>
