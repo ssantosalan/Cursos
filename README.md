@@ -23,6 +23,8 @@
 <strong>Cursando:</strong>
 
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
+    • React
+    • JavaScript
 
 <strong>URI:</strong><br>
     • In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>
