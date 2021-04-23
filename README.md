@@ -11,7 +11,15 @@
     • Curso de Algoritmos [40 Horas]
     • Curso de Introdução à Programação Orientada a Objetos (POO) [10 Horas]
     • Git e GitHub [20 Horas]
-    
+    • C# [10 horas]
+    • Java [40 horas] 
+    • HTML [17 horas]
+    • HTML5 e CSS [40 horas]
+    • Pacote Office 2010 
+    <li> MS Excel [54 horas]</li>
+    <li> MS Outlook [11 horas]</li>
+    <li> PowerPoint [52 horas]</li>
+
 <strong>Cursando:</strong>
 
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
