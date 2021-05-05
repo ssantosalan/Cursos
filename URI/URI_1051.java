@@ -20,42 +20,18 @@ public class URI_1051 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		double salary = sc.nextDouble();
-		double taxes, taxes2000, taxes3000, taxes4500;
 
 		if (salary >= 0 && salary <= 2000) {
-			System.out.println("Isento");
-			salary = salary - 2000;
-
-		} else {
-			salary = salary - 2000;
-
-		}
-
-		if (salary > 0 && salary <= 1000) {
-			taxes = (salary * 0.08);
-			System.out.printf("R$ %.2f\n", taxes);
-
-		} else if (salary > 1000 && salary <= 2500) {
-			salary = salary - 1000;
-			taxes2000 = 1000 * 0.08;
-			taxes3000 = salary * 0.18;
-			taxes = taxes2000 + taxes3000;
-
-			System.out.printf("R$ %.2f\n", taxes);
-
-		} else if (salary > 2500) {
-			salary = salary - 1000;
-			taxes2000 = 1000 * 0.08;
-			salary = salary - 1500;
-			taxes3000 = 1500 * 0.18;
-			taxes4500 = salary * 0.28;
-			taxes = taxes2000 + taxes3000 + taxes4500;
-			System.out.printf("R$ %.2f\n", taxes);
-
-		}
-
+        	System.out.println("Isento");
+        } else if (salary > 2000 && salary <= 3000) {
+        	System.out.println(String.format("R$ %.2f", (salary - 2000) * 0.08));
+        } else if (salary > 3000 && salary <= 4500) {
+        	System.out.println(String.format("R$ %.2f", ((salary - 3000)  * 0.18) + 80));
+        } else {
+        	System.out.println(String.format("R$ %.2f", ((salary - 4500) * 0.28) + 350));
+        }
+		
 		sc.close();
-
-	}
-
+    }
+	
 }
