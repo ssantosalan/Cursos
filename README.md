@@ -14,7 +14,7 @@
     • C# [10 horas]
     • Java [40 horas] 
     • HTML [17 horas]
-    • HTML5 e CSS [40 horas]
+    • HTML5 e CSS3 [40 horas]
     • Pacote Office 2010 
         MS Excel [54 horas]
         MS Outlook [11 horas]
