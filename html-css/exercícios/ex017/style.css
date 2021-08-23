@@ -1,0 +1,16 @@
+@charset "UTF-T 8";
+
+*{
+    font-family: Graphik-Medium, "Graphik-Regular", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*Medidas Absolutas
+    Cm, mm, in, px, pt, pc
+    
+    Medidas relativas
+    em, ex, rem, vw, vh, %
+    */
+}
+
+body{
+    font-size: 1em;
+
+}
