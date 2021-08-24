@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de hover</title>
+    <title>Usando o Hover</title>
     <style>
-        body {
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        div{
+            display: inline-block;
+            height: 300px;
+            width: 300px;
+            background-color: aquamarine;
         }
 
         div > p {
@@ -16,23 +19,23 @@
 
         div:hover > p {
             display: block;
-            color: white;
-            background-color: red;
             width: 300px;
-            height: 300px;
         }
 
-        div:hover{
-            color: green;
+        div:hover {
+            background-color: yellow;
         }
+
+
+
     </style>
 </head>
+
 <body>
-    <h1>Exemplo de hove</h1>
-    <p>Passe o mouse abaixo</p>
-    <div>Passe o mouse aqui
-        <p>Texto Escondido...</p>
+    <div>d1
+        <p>Olá, Mundo!</p>
     </div>
-    <p>Fim de exemplo</p>
+    <div>d2</div>
+    <div>d3</div>
 </body>
 </html>
