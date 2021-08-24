@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+body {
+    text-align: justify;
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+main {
+    background-color: #202020;
+    border: 10px;
+    width: 800px;
+    height: 850px;
+    padding: 30px;
+    margin: auto;
+    outline: auto;
+}
+
+h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+p{
+    text-align: justify;
+    color: white;
+}
+
+
+a{
+    color: purple;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+a:hover{
+    color: yellow;
+    text-decoration: underline;
+    
+    
+}
