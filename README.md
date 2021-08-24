@@ -25,6 +25,7 @@
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
     • React
     • JavaScript
+    • MySQL [40 Horas]
 
 <strong>URI:</strong><br>
     • In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>
