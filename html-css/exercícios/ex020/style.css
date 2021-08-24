@@ -20,3 +20,14 @@ h2{
    
 
 }
+.basico {
+    color: red;
+}
+
+.intermediario{
+    color: yellow;
+}
+
+.avancado{
+    color: green;
+}
