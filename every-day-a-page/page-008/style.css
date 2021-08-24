@@ -27,6 +27,25 @@ p{
     color: white;
 }
 
+.primeira{
+
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border: 10px;
+    border-color: yellow;
+    background-color: blueviolet;
+    border-width: 10px;
+    border-style: solid;
+    border-color: blueviolet;
+    width: 40px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+
+
 
 a{
     color: purple;
@@ -38,6 +57,5 @@ a{
 a:hover{
     color: yellow;
     text-decoration: underline;
-    
     
 }
