@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body {
+    background-color: #bc85f7b4;
+}
+
+h1{
+    color: #2c0558;
+    font: bold;
+}
+
+h1#principal {
+    color: rgb(0, 124, 0);
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+h2{
+    color: #000000;
+   
+
+}
