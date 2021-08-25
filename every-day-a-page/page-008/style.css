@@ -44,6 +44,13 @@ p{
     padding-left: 10px;
 }
 
+.primeira:hover {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    border-color: yellow;
+}
+
 
 
 
