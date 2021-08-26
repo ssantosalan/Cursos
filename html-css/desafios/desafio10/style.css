@@ -90,3 +90,16 @@ p.centralizar{
     text-align: center;
     
 }
+
+div{
+    width: 5%;
+}
+.esquerda{
+    display: flex
+    
+}
+
+.direita{
+    display: flex;
+
+}
