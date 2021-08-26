@@ -10,18 +10,19 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-   
+    background-color: rgb(218, 255, 218);
     
 }
 
 header{
     background-color: green;
     padding: 10px 10px 10px 5px;
-    margin: 10px;
+    margin: auto;
     
 }
 
 h1 {
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -40,9 +41,19 @@ nav{
 nav > a{
     text-decoration: none;
     color: white;
+    padding: auto;
 }
 
 nav > a:hover{
     text-decoration: underline;
     
+}
+
+main{
+    background-color: aqua;
+   
+    
+    width: 600px;
+    padding: 20px;
+    margin: auto;
 }
