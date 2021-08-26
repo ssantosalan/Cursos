@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'idroid';
+    src: url('/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+   
+    
+}
+
+header{
+    background-color: green;
+    padding: 10px 10px 10px 5px;
+    margin: 10px;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+nav{
+  
+   padding: 0px;
+   margin: 0px;
+
+   font-weight: bold;
+}
+
+nav > a{
+    text-decoration: none;
+    color: white;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+    
+}
