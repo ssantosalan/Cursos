@@ -78,7 +78,13 @@ h2{
     font-family: 'idroid';
 }
 
-h3{
+
+h3{ 
+    
     color: #276644;
     font-family: 'idroid';
+    /*background-color: #90d6b178;*/
+    background-image: linear-gradient(to left, #ffffff42, #90d6b178);
+    background-attachment: fixed;
+   
 }
