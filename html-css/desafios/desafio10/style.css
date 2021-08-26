@@ -50,10 +50,8 @@ nav > a:hover{
 }
 
 main{
-    background-color: aqua;
-   
-    
-    width: 600px;
+    background-color: rgb(255, 255, 255);
+    width: 800px;
     padding: 20px;
     margin: auto;
 }
