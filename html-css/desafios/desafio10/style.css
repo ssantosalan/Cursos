@@ -47,18 +47,15 @@ p{
 }
 
 
-nav{
-  
-   padding: 0px;
-   margin: 0px;
-
+nav{   
    font-weight: bold;
 }
 
 nav > a{
     text-decoration: none;
     color: white;
-    padding: auto;
+    padding-left: 10px;
+    padding-right: 10px; 
 }
 
 nav > a:hover{
@@ -87,4 +84,9 @@ h3{
     background-image: linear-gradient(to left, #ffffff42, #90d6b178);
     background-attachment: fixed;
    
+}
+
+p.centralizar{
+    text-align: center;
+    
 }
