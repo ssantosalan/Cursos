@@ -44,7 +44,7 @@ h1 {
 
 p{
     text-align:justify;
-    text-indent: 50px;
+    text-indent: 30px;
 }
 
 
@@ -61,6 +61,9 @@ nav > a{
 
 nav > a:hover{
     text-decoration: underline;
+    background-color:rgba(183, 255, 183, 0.26);
+    padding: 10px;
+    border-radius: 10%;
     
 }
 
@@ -87,6 +90,14 @@ h3{
     background-attachment: fixed;
    
 }
+
+
+p#videofundo{
+    background-color: #1c4b32;
+    
+    
+}
+
 
 iframe{
     display: block;
