@@ -91,6 +91,23 @@ h3{
    
 }
 
+h4{
+    color: white;
+    background-color: #2FA866;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px 10px 0px 0px;
+   
+    
+}
+
+
+article{
+    background-color: #C5EBD6;
+    border-radius: 10px 10px 10px 10px;   
+    box-shadow: 1px 1px 20px  rgba(0, 0, 0, 0.424);
+    
+}
+
 
 p#videofundo{
     background-color: #1c4b32;
