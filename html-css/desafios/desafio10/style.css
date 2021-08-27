@@ -78,6 +78,7 @@ main{
     margin: auto;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.479);
     border-radius: 0px 0px 10px 10px;
+    
 }
 
 h2{
@@ -93,6 +94,7 @@ h3{
     /*background-color: #90d6b178;*/
     background-image: linear-gradient(to left, #ffffff42, #90d6b178);
     background-attachment: fixed;
+    
    
 }
 
