@@ -25,17 +25,18 @@ h1 {
     color: rgb(255, 255, 255);
     text-align: center;
    
+   
 }
 
-.primeiraparte{
-
+.paragrafoprincipal{
     text-align: center;
     color: white;
+    margin-bottom: -5px;
 
 }
 
-.segundaparte{
-
+.paragrafosecundario{
+ 
     text-align: center;
     color: white;
 }
