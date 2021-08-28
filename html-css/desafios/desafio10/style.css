@@ -33,7 +33,6 @@ header{
 h1 {
     color: rgb(255, 255, 255);
     text-align: center;
-   
 }
 
 header > h1 {
@@ -171,31 +170,45 @@ p.textoartigo {
 
 
 
-p#videofundo{
+div.video{
     background-color: #1c4b32;
-    padding: 30px;  /*TESTANDO*/
-    
-    
-    
-    
+    margin: 0px -20px 20px -20px;
+    padding: 20px;
+    padding-bottom: 56.5%;
+    position: relative;
 }
 
+div.video > iframe{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%  
 
-iframe{
+}
+
+/*p#videofundo{
+    background-color: #1c4b32;
+    padding: 30px;    
+   
+}*/
+
+
+/*iframe{
     display: block;
     margin-left: auto;
     margin-right: auto;
     
-}
+}*/
 
 
-div{
+/*div{
     width: 5%;
 }
 .esquerda{
     display: flex
     
-}
+}*/
 
 .direita{
     display: flex;
