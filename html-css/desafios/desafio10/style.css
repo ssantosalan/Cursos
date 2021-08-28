@@ -178,12 +178,22 @@ a:hover{
 
 footer{
     background-color: #1c4b32;
-   
+}
+
+footer > a {
+    text-decoration: none;
+    color: white;
 }
 
 footer > p {
     text-align: center;
     color: white;
+    margin-bottom: 0%;
+    
+}
+
+a#myname {
+    color: #84E1AD;
 }
 
 ul{
