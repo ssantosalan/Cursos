@@ -24,7 +24,7 @@
 
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
     • React
-    • JavaScript
+    • Javascript [40 Horas]
     • MySQL [40 Horas]
 
 <strong>URI:</strong><br>
