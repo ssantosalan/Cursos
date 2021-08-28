@@ -115,13 +115,18 @@ article{
     border-radius: 10px 10px 10px 10px;   
     box-shadow: 1px 1px 20px  rgba(0, 0, 0, 0.424);
     
+    
+}
+
+p.textoartigo {
+    padding: 5px 20px 5px 20px;
 }
 
 
 
 p#videofundo{
     background-color: #1c4b32;
-    padding: 40px;  /*TESTANDO*/
+    padding: 30px;  /*TESTANDO*/
     
     
     
@@ -198,4 +203,9 @@ a#myname {
 
 ul{
     list-style: "✔ ";
+}
+
+abbr{
+    text-decoration: underline;
+    
 }
