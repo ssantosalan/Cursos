@@ -116,8 +116,12 @@ article{
 }
 
 
+
 p#videofundo{
     background-color: #1c4b32;
+    padding: 40px;  /*TESTANDO*/
+    
+    
     
     
 }
@@ -127,6 +131,7 @@ iframe{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 
@@ -177,4 +182,8 @@ footer{
 footer > p {
     text-align: center;
     color: white;
+}
+
+ul{
+    list-style: "✔ ";
 }
