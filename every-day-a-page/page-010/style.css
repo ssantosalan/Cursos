@@ -1,6 +1,8 @@
 @charset "UTF-8";
 *{
-    color: yellow;
+    color: white;
+   margin: 0px;
+   padding: 0px;
 }
 header {
     background-color: black;
@@ -10,9 +12,11 @@ header {
 
 main {
     background-color: black;
-    min-width: 320px;
-    max-width: 820px;
+
     margin: auto;
+    min-width: 320px;
+    max-width: 1000px;
+  
 }
 
 footer{
