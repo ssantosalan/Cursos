@@ -1,0 +1,21 @@
+@charset "UTF-8";
+*{
+    color: yellow;
+}
+header {
+    background-color: black;
+    margin: auto;
+
+}
+
+main {
+    background-color: black;
+    min-width: 320px;
+    max-width: 820px;
+    margin: auto;
+}
+
+footer{
+    background-color: black;
+}
+
