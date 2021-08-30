@@ -13,9 +13,6 @@
 :root {
     --cor0: black;
     --cor1: #1E1E1E;
-    --cor1:
-    --cor1:
-    --cor1:
 
     --fonte-padrao: 'PT Sans', sans-serif;
     --fonte-destaque:
@@ -30,6 +27,8 @@ header {
     min-height: 200px;
 
 }
+
+
 
 main {
     background-color: #1E1E1E;
