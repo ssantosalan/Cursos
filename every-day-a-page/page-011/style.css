@@ -18,7 +18,9 @@ main {
     max-width: 1000px;
 }
 
-
+h1 {
+    text-align: center;
+}
 main p {
     margin: auto;
     min-width: 220px;
