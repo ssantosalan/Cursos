@@ -7,5 +7,24 @@
 }
 
 header{
-    height: ;
+    height: 200px;
+  
+   
+}
+
+main {
+    margin: auto;
+    min-width: 320px;
+    max-width: 1000px;
+}
+
+
+main p {
+    margin: auto;
+    min-width: 220px;
+    max-width: 500px;
+}
+
+footer > p {
+    text-align: center;
 }
