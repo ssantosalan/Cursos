@@ -15,6 +15,7 @@
     • Java [40 horas] 
     • HTML [17 horas]
     • HTML5 e CSS3 [40 horas]
+    • MySQL [40 Horas]
     • Pacote Office 2010 
         MS Excel [54 horas]
         MS Outlook [11 horas]
@@ -25,7 +26,7 @@
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
     • React
     • Javascript [40 Horas]
-    • MySQL [40 Horas]
+    
 
 <strong>URI:</strong><br>
     • In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>
