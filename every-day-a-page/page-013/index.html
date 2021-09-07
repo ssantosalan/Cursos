@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+   
+</head>
+<body>
+    <h1>Speed Track</h1>
+    <input type="number" name="txt1" id="txt1">
+    <input type="button" value="verificar"  onclick="verificar()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function verificar(){
+
+        var txt1 = window.document.querySelector('input#txt1')
+        var res = window.document.querySelector('div#res')
+        var vel = Number(txt1.value)
+
+        res.innerHTML = `<p>**Speed Track**</p>`
+
+        if (vel > 60) {
+            res.innerHTML = `<p>Você foi <strong>multado</strong>!</p>`
+        } else {
+            res.innerHTML = `<p>Você <strong>não</strong> foi multado!</p>`
+        }
+        
+
+        }
+
+    </script>
+
+    
+</body>
+</html>
