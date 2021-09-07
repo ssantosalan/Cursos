@@ -5,6 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+            margin: auto;
+            min-width: 320px;
+            max-width: 820px;
+            height: 800px;
+            text-align: center;
+
+        }
+       
+    </style>
    
 </head>
 <body>
@@ -18,19 +31,18 @@
     <script>
         function verificar(){
 
-        var txt1 = window.document.querySelector('input#txt1')
-        var res = window.document.querySelector('div#res')
-        var vel = Number(txt1.value)
+            var txt1 = window.document.querySelector('input#txt1')
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txt1.value)
 
-        res.innerHTML = `<p>**Speed Track**</p>`
+            res.innerHTML = `<p>**Speed Track**</p>`
 
-        if (vel > 60) {
-            res.innerHTML = `<p>Você foi <strong>multado</strong>!</p>`
-        } else {
-            res.innerHTML = `<p>Você <strong>não</strong> foi multado!</p>`
-        }
+            if (vel > 60) {
+                res.innerHTML = `<p>Você foi <strong>multado</strong>!</p>`
+            } else {
+                res.innerHTML = `<p>Você <strong>não</strong> foi multado!</p>`
+            }
         
-
         }
 
     </script>
