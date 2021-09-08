@@ -5,5 +5,19 @@ function carregar() {
     var data = new Date()
     var hora = data.getHours()
     msg.innerHTML = `Agora são ${hora} horas`
+   
+    if(hora >= 0 && hora < 12) {
+        //Dia
+        img.src ="morning.png"
+        document.body.style.background = '#e2cd9f'
+    } else if (hora >= 12 && hora < 18) {
+        //tarde
+        img.src ="afternoon.png"
+        document.body.style.background = '#DE8A4F'
+    } else {
+        //noite
+        img.src ="night.png"
+        document.body.style.background = '#515154'
+    }
 }
 
