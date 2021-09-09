@@ -10,18 +10,23 @@ function contar(){
     
     res.innerHTML = `<p>Contando:</p>`
 
-    if (inicio === 0) {
-        res.innerHTML= 'Impossível contar!'
-    }
-
-    if (passo === 0 && inicio != 0) {
+    if (passo <= 0 && inicio != 0 ) {
         window.alert('Valor inválido! Será considerado passo 1')
         passo = 1
     }
-    
-    for (var i = inicio; i <= fim; i = i + passo) {
-        res.innerHTML = i
+
+    if (inicio === 0) {
+        res.innerHTML= 'Impossível contar!'
+    } else {
+        for (var i = inicio; i < fim; i = i + passo) {
+            res.innerHTML += i + '... '
+        }
+        res.innerHTML += i
     }
+
+    
+    
+    
     
     
 
