@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,31 +8,21 @@
     <title>Vamos contar</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Vamos contar</h1>
     </header>
     <section>
-        <div>
+        <div id="dados">
             <p>Início:
-                <input type="number" name="txtinicio" id="txtinicio">
-            </p>
-           
-        </div>
-        <div>
-           <p>Fim:
-                <input type="number" name="txtfim" id="txtfim">
-           </p>
-        </div>
-        <div>
+                <input type="number" name="txtinicio" id="txtinicio"></p>
+            <p>Fim:
+                <input type="number" name="txtfim" id="txtfim"></p>
             <p>Passo:
-                <input type="number" name="txtpasso" id="txtpasso">
-            </p>
-        </div>
-        <div>
+                <input type="number" name="txtpasso" id="txtpasso"></p>
             <p>
-                <input type="button" value="Contar" onclick="contar()">
-            </p>
+                <input type="button" value="Contar" onclick="contar()"></p>
         </div>
         <div id="res">
             Preparando a contagem...
@@ -39,8 +30,9 @@
     </section>
     <footer>
         <p>&copy; CursoemVideo</p>
-    </footer> 
-    
+    </footer>
+
     <script src="script.js"></script>
 </body>
+
 </html>
