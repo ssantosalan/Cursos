@@ -1,12 +1,20 @@
-function gerar() {
-
-    var txtnumero = document.querySelector('input#txtnumero')
-    var numero = Number(txtnumero.value)
-    var res = document.querySelector('div#res')
-    
-    for (var i = 1; i <= 10; i++) {
-        res.innerHTML += `<p>${numero} x ${i} = ${numero * i}</p>   `
-
+function tabuada(){
+    let num = document.getElementById('txtnumero')
+    let tab = document.getElementById('seltab')
+    if (num.value.length == 0) {
+       window.alert('Por favor, digite um número!')
+    } else {
+        let n = Number(num.value)
+        let c = 1
+        while (c <= 10) {
+            let item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n*c}`
+            tab.appendChild(item)
+            c++
+        } 
     }
 
+
+
 }
+
