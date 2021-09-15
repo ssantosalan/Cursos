@@ -29,5 +29,9 @@ function adicionar() {
 
 }
 
+function finalizar() {
+    
+}
+
 
 
