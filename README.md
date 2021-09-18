@@ -5,6 +5,18 @@
  <p>Local destinado a guardar comandos, informações e dados que são aprendidos durante os cursos.<br>
  Também é um lugar para guardar informações / exercícios realizados de forma autodidata.</p> 
 
+## Projetos / Projects
+
+### Java 
+- https://github.com/ssantosalan/a-torre-de-gnosis-project
+- https://github.com/ssantosalan/minigames-purejava-project
+
+### HTML/CSS/JavaScript
+- https://github.com/ssantosalan/frontbox-site-project
+- https://github.com/ssantosalan/game-genius-project
+- https://github.com/ssantosalan/android-site-project-
+- https://github.com/ssantosalan/blues-nova
+
 <strong>Cursos realizados:</strong>
 
     • Curso de Fundamentos de Lógica de Programação [15 Horas]
