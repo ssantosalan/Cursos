@@ -17,7 +17,7 @@
 - https://github.com/ssantosalan/android-site-project-
 - https://github.com/ssantosalan/blues-nova
 
-<strong>Cursos realizados:</strong>
+## Cursos realizados:
 
     • Curso de Fundamentos de Lógica de Programação [15 Horas]
     • Curso de Algoritmos [40 Horas]
@@ -34,16 +34,17 @@
         MS Outlook [11 horas]
         PowerPoint [52 horas]
 
-<strong>Cursando:</strong>
+## Cursando: 
 
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
     • React
     
 
-<strong>URI:</strong><br>
-    • In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>
+### URI:
 
-<strong>html-css:</strong>
+<p>• In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a></p>
+
+### html-css:
 
 <p>• In the html-css folder, there are some exercises done while studying the language.</p>
     
