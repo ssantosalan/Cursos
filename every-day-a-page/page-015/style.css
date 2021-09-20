@@ -6,3 +6,37 @@
     box-sizing: border-box;
 }
 
+/**********************************/
+/* 0. Variáveis
+/* 1. Container
+/* 2. Menu
+/* 3. Header
+/* 4. Quem somos
+/* 5. Nossos cursos
+/* 6. Planos
+/* 7. Vantagens
+/* 8. Newsletter
+/* 9. Footer
+/**********************************/
+
+/**********************************/
+/* 0. Variáveis
+/**********************************/
+
+:root {
+    --ff-primary: 'Roboto', sans-serif;
+
+    --clr-blue-dark: #01086B;
+    --clr-blue-medium: #4954EC;
+    --clr-blue-light: #0212E8;
+    --clr-white:#F5F5F5;
+}
+
+/**********************************/
+/* 1. Estilos gerais
+/**********************************/
+
+body {
+    background-color: var(--clr-white);
+    font-family: var(--ff-primary);
+}
