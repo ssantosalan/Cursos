@@ -46,15 +46,3 @@ body {
 /* 1. Ilustrações
 /**********************************/
 
-.ilustracoes {
-    max-width: 960px;
-    margin: auto;
-}
-
-.ilustracao {
-    display: flex;
-}
-.ilustracoes__texto {
-    flex-wrap: wrap;
-    justify-content: center;
-}
