@@ -14,7 +14,7 @@
 ### HTML/CSS/JavaScript
 - https://github.com/ssantosalan/frontbox-site-project
 - https://github.com/ssantosalan/game-genius-project
-- https://github.com/ssantosalan/android-site-project-
+- https://github.com/ssantosalan/android-site-project
 - https://github.com/ssantosalan/blues-nova
 
 ## Cursos realizados:
