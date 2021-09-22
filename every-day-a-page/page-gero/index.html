@@ -17,8 +17,8 @@
         <div class="menu-bg">
             <nav class="navbar">
                 <div class="navbar__logo">
-                    <img src="img/gero360_logo_white.svg" alt="logo" class="navbar__logogero">
-                    <img src="img/user-placeholder.jpg" alt="" class="navbar__logouser">
+                    <img src="img/gero360_logo_white.svg" alt="logo usuário" class="navbar__logogero">
+                    <img src="img/user-placeholder.jpg" alt="logo gero" class="navbar__logouser">
                 </div> <!-- navbar__logo-->
         </div> <!-- .menu-bg-->
         </nav> <!-- .navbar-->
@@ -27,15 +27,26 @@
     <section class="hospedes">
         <div class=hospedes__botao>
             <div>
-                <input type="button" value="+ ADICIONAR HÓSPEDE" class="hospedes__botao-adicionar">
+                <input type="button" value="+ adicionar hóspede" class="hospedes__botao-adicionar">
             </div>
             <div>
-                <input type="button" value="IMPRIMIR" class="hospedes__botao-imprimir">
+                <input type="button" value="imprimir" class="hospedes__botao-imprimir">
             </div>
         </div> <!-- .hospedes__botao -->
+        <h2 class="hospedes__titulo">Hóspedes</h2>
         <div class="hospedes-c">
-            <h2 class="hospedes__titulo">Hóspedes</h2>
-            
+            <div class="'hospedes__card">
+                    <div>
+                        <img src="img/user-placeholder.jpg" alt="logo usuário" class="navbar__logouser">
+                        <span id="nome"></span>
+                    </div>
+                    <hr>
+                    <div>
+                      <img src="img/home.png" alt="home ícone">
+                      <span id="data"></span>
+                    </div>
+                    
+            </div> <!-- .hospedes__card-->
         </div> <!-- .hospedes-c-->
     </section> <!-- .hospedes-->
     <script src="js/scripts.js"></script>

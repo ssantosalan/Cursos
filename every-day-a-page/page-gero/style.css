@@ -120,15 +120,20 @@ body {
 .hospedes-c {
     max-width: 1500px;
     margin: 0 auto;
+    padding: 0 10px 10px 70px; 
 }
 
 .hospedes__titulo {
+    max-width: 1500px;
+    margin: 0 auto;
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--clr-gray);
     padding: 50px; 
     margin-top: 10px;
 }
+
+
 
 
 
