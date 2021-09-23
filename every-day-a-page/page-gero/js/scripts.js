@@ -20,7 +20,7 @@ persons.forEach((item) => {
 	const card = `<div class="card">
 	<div class="card-top">
 		<div class="card-top__img">
-			<img src="img/user-placeholder.jpg" alt="logo usuário" class="navbar__logouser">
+			<img src="img/user-placeholder.jpg" alt="logo usuário" class="card-top__user">
 		</div>
 		<span class="card-top__nome">${item.nome}</span>
 	</div>
