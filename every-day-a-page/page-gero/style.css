@@ -75,6 +75,20 @@ body {
     cursor: pointer;
 }
 
+.navbar__usuario {
+    display: flex;
+    align-items: center;
+}
+
+.nome {
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 10px;
+    color:var(--clr-white);
+    cursor: pointer;
+}
+
 .navbar-header__toggle {
 	background: transparent;
 	border: transparent;
@@ -94,6 +108,10 @@ body {
     }
 
     .navbar__logouser {
+        display: none;
+    }
+
+    .nome {
         display: none;
     }
 }
@@ -154,14 +172,14 @@ body {
     margin: 0 auto;
 }
 
+
 .hospedes__titulo {
-    text-align: center;
-    margin: 0 auto;
-    text-align: center;
+    width: 30%;
+  
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--clr-gray);
-    padding: 40px; 
+    padding: 40px 40px 40px 100px; 
     margin-top: 10px;
 }
 
