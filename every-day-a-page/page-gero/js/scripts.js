@@ -16,6 +16,7 @@ const persons = [
 
 persons.forEach((item) => {
 	const div = document.getElementById('hospedes__card-js')
+	
 	const card = `<div class="card">
 	<div class="card-top">
 		<div class="card-top__img">
@@ -24,15 +25,28 @@ persons.forEach((item) => {
 		<span class="card-top__nome">${item.nome}</span>
 	</div>
 
-	<hr/>
+	<div class="card-line"></div>
 	
-	<div class="card-bottom">
-		<div class="card-bottom__img">
-			<img src="img/home.png" alt="home ícone" class="card-bottom__logo-home">	
-		</div>		
-		<span class="card-bottom__data">${item.nascimento}</span>
-	</div>
-	
+  <div class="card-bottom">
+
+	${
+		item.ativo
+		? `
+		
+	  	<div class="card-bottom__img">
+			  <img src="img/home.png" alt="home ícone" class="card-bottom__logo-home">	
+			</div>
+		  	<span class="card-bottom__data">${item.nascimento}</span>
+		</div>`	
+		: 
+		`
+			<div class="card-bottom__inativo">
+       <span class="card-bottom__inativo--on">Inativo</span>
+			</div>
+		`
+	}
+  	</div>
+
 
 	 </div>`;
 	const ele = document.createElement("div");
