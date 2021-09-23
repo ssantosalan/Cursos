@@ -13,3 +13,9 @@ const hospedes = [
 	{ id: '12', nome: 'Michelângelo', nascimento: '1927-08-01', ativo: true }
 ];
 
+const hospedes = document.getElementById('home');
+hospedes.forEach(hospedes => {
+
+
+
+});
