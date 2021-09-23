@@ -34,7 +34,6 @@ html {
 
 body {
 	font-family: var(--ff-primary);
-	background-color: var(--clr-background);
 }
 
 /**********************************/
@@ -228,7 +227,7 @@ body {
 
 .card-top__nome {
     font-family: var(--ff-primary);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.2rem;
     color:var(--clr-gray);
 }
