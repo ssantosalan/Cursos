@@ -1,5 +1,5 @@
 const persons = [
-	{ id: '1', nome: 'Antônio', nascimento: '1950-05-10', ativo: true},
+	{ id: '1', nome: 'Arthur', nascimento: '1950-05-10', ativo: true},
 	{ id: '2', nome: 'Mario', nascimento: '1940-03-10', ativo: false},
 	{ id: '3', nome: 'Maria', nascimento: '1942-09-12', ativo: true},
 	{ id: '4', nome: 'Pedro', nascimento: '1934-12-15', ativo: true},
