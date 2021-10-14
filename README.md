@@ -37,7 +37,8 @@
 ## Cursando: 
 
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
-    • React
+    • Angular
+    • TypeScript
     
 
 ### URI:
