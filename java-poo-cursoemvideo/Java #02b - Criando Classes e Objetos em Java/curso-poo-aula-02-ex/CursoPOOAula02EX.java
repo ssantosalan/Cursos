@@ -12,6 +12,19 @@ public class CursoPOOAula02EX {
         
         garrafa.status();
         garrafa.servirAgua();
+        System.out.println("");
+        Trabalho trabalho = new Trabalho();
+        trabalho.folga = true;
+        trabalho.horario = "9h às 16h";
+        trabalho.area = "Tecnologia";
+        trabalho.diaDeTrabalho = "Segunda à sexta";
+        
+        trabalho.status();
+        
+        trabalho.desfolgar();
+        
+        trabalho.status();
+        
     }
 
 }
