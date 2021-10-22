@@ -1,3 +1,11 @@
-<p>cursos component!</p>
+<p>
+    Meu site: {{ nomeSite }}
+</p>
 
 <app-curso-detalhe></app-curso-detalhe>
+
+<ul>
+    <li *ngFor="let curso of cursos">
+        {{ curso }}
+    </li>
+</ul>
