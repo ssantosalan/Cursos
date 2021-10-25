@@ -41,6 +41,7 @@
     • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
     • Angular
     • TypeScript
+    • JavaScript
     
 
 ### URI:
