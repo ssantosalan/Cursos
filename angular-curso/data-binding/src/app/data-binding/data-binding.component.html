@@ -1,4 +1,4 @@
-<section class="property-binding">
+<!-- <section class="property-binding">
   <article>
     <h3>Interpolation</h3>
     <p>String rendezira com interpolação: {{ url }}</p>
@@ -64,6 +64,30 @@
       [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
         Aparecer em caso de erro.
       </div>
+    </div>
+  </article>
+</section>
+!-->
+<section class="property-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="botaoCliclado()" class="btn btn-primary">
+        Me clique!
+      </button>
+
+      <br /><br />
+
+      <input
+        type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor($any($event.target).value)"
+        (blur)="salvarValor($any($event.target).value)"
+        #campoInput
+      />
+
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
     </div>
   </article>
 </section>
