@@ -40,12 +40,15 @@ function deleteCheck(e) {
   //Delete todo
   if (item.classList[0] === "trash-btn") {
     const todo = item.parentElement;
-    todo.remove();
+    todo.classList.add("fall");
+    todo.addEventListener("transitionend", function () {
+      todo.remove();
+    });
   }
 
   //Check mark
-  if(item.classList[0] === "complete-btn") {
-      const todo = item.parentElement;
-      todo.classList.toggle("completed");
+  if (item.classList[0] === "complete-btn") {
+    const todo = item.parentElement;
+    todo.classList.toggle("completed");
   }
 }
