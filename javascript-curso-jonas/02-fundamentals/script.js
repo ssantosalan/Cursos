@@ -12,6 +12,7 @@
 //const if = 23;     
 */
 
+/*
 function logger(){
     console.log("My name is Jonas");
 }
@@ -31,4 +32,18 @@ console.log(appleJuice);
 
 const appleOrangeJuice = fruitProcecssor(3,5);
 console.log(appleOrangeJuice);
+*/
 
+// Function declaration
+function calcAge1(birthYeah) {
+    return 2037 - birthYeah;
+}
+const age1 = calcAge1(1991);
+console.log(age1);
+
+// Function expression
+const calcAge2 = function (birthYeah) {
+    return 2037 - birthYeah;
+}
+const age2 = calcAge1(1991);
+console.log(age1, age2);
