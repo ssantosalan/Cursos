@@ -102,7 +102,7 @@ const yearUntilRetirement = function (birthYear, firstName) {
 console.log(yearUntilRetirement(1996, "Alan"));
 console.log(yearUntilRetirement(1950, "Mike"));
 
-*/
+
 
 //Coding Challenge #1
 
@@ -128,3 +128,48 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 
 checkWinner(avgDolphins01, avgKoalas01);
 checkWinner(avgDolphins02, avgKoalas02);
+
+
+
+
+
+const describeCountry = (country, population, capitalCity) => {
+    return `${country} has ${population} million people and its capital city is ${capitalCity}`
+}
+
+console.log(describeCountry("Brazil", 220, "Brasília"));
+
+
+const worldPopulation = 7900;
+
+// function percentageOfWorld1(population) {
+//     return `${((population * 100) / worldPopulation) }`;
+// }
+
+const chinaWorldPopulationPercentage = percentageOfWorld1(1441);
+
+function displayContryPopulation(country, populationPercent) {
+    return console.log(`${country} has ${populationPercent}% of the world population`);
+}
+
+displayContryPopulation("china", chinaWorldPopulationPercentage);
+
+
+// const percentageOfWorld2 = function(worldPopulation, population) {
+//     return (population / worldPopulation) * 100;
+// }
+
+//const brazilPercentage = percentageOfWorld2(worldPopulation, 220);
+
+//displayContryPopulation("Brazil", brazilPercentage);
+
+*/
+
+/*
+const percentageOfWorld3 = (wPopulation, population) => (population / worldPopulation) * 100;
+const worldPopulation = 7900;
+
+console.log(percentageOfWorld3(worldPopulation, 1441));
+*/
+
+
