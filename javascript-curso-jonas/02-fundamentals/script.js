@@ -110,9 +110,11 @@ const calcAverage = (score01, score02, score03) => (score01 + score02 + score03)
 
 const avgDolphins01 = calcAverage(44, 23, 71);
 const avgKoalas01 = calcAverage(65, 54, 49);
+console.log(avgDolphins01, avgKoalas01);
 
 const avgDolphins02 = calcAverage(85, 54, 41);
 const avgKoalas02 = calcAverage(23, 34, 27);
+console.log(avgDolphins02, avgKoalas02);
 
 const checkWinner = function (avgDolphins, avgKoalas) {
   if (avgDolphins > avgKoalas && avgDolphins / avgKoalas >= 2) {
