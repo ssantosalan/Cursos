@@ -106,9 +106,7 @@ console.log(yearUntilRetirement(1950, "Mike"));
 
 //Coding Challenge #1
 
-const calcAverage = (score01, score02, score03) => {
-  return (score01 + score02 + score03) / 3;
-};
+const calcAverage = (score01, score02, score03) => (score01 + score02 + score03) / 3;
 
 const avgDolphins01 = calcAverage(44, 23, 71);
 const avgKoalas01 = calcAverage(65, 54, 49);
