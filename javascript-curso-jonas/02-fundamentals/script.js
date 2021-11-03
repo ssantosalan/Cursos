@@ -172,4 +172,23 @@ const worldPopulation = 7900;
 console.log(percentageOfWorld3(worldPopulation, 1441));
 */
 
+// Arrays
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = "Jay";
+console.log(friends);
+
+const firstName = "Jonas";
+const jonas = [firstName, "Santos", 2037 - 1996, 'teacher', friends];
+console.log(jonas);
 
