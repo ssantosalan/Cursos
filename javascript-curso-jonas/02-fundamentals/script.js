@@ -170,14 +170,14 @@ const percentageOfWorld3 = (wPopulation, population) => (population / worldPopul
 const worldPopulation = 7900;
 
 console.log(percentageOfWorld3(worldPopulation, 1441));
-*/
+
 
 // Arrays
 
 const friends = ["Michael", "Steven", "Peter"];
 console.log(friends);
 
-const years = new Array(1991, 1984, 2008, 2020);
+//const years = new Array(1991, 1984, 2008, 2020);
 
 console.log(friends[0]);
 console.log(friends[2]);
@@ -192,3 +192,19 @@ const firstName = "Jonas";
 const jonas = [firstName, "Santos", 2037 - 1996, 'teacher', friends];
 console.log(jonas);
 
+*/
+
+// Exercise
+const calcAge = function (birthYeah) {
+    return 2037 - birthYeah;
+}
+
+const years = [1990, 1996, 2002, 2010, 2018];
+
+console.log(calcAge(years[0]));
+console.log(calcAge(years[2]));
+console.log(calcAge(years[years.length - 1]));
+
+const ages = [calcAge(years[0]), calcAge(years[2]), calcAge(years[years.length - 1])];
+
+console.log(ages);
