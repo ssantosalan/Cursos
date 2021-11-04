@@ -241,7 +241,7 @@ if (friends.includes("Peter")) {
     console.log("You have a friend called Peter");
 }
 
-*/
+
 
 // Coding Challenge #2
 
@@ -263,3 +263,21 @@ for (let item of bills) {
 }
 
 console.log(totals);
+
+*/
+
+const jonasArray = [
+  "Jonas",
+  "Santos",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+];
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Santos",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Micheal", "Peter", "Steven"],
+};
