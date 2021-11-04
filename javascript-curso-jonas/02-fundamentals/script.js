@@ -264,7 +264,7 @@ for (let item of bills) {
 
 console.log(totals);
 
-*/
+
 
 const jonasArray = [
   "Jonas",
@@ -313,3 +313,37 @@ console.log(jonas);
 console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
 );
+
+*/
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Santos",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Micheal", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+    return this.summary;
+  },
+};
+
+console.log(jonas.calcAge());
+console.log(jonas.age);
+// Chalenge
+// "Jonas is a 46-year old teacher, and he has a driver's license."
+// getSummary
+// return a string
+console.log(jonas.getSummary());
+console.log(jonas.summary);
+
+
