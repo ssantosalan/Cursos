@@ -346,7 +346,7 @@ console.log(jonas.age);
 console.log(jonas.getSummary());
 console.log(jonas.summary);
 
-*/
+
 
 // Coding Challenge #3
 
@@ -373,3 +373,63 @@ const person02 = {
 };
 
 console.log(person01.calcBMI() > person02.calcBMI() ? `${person01.fullname}s BMI ${person01.BMI} is higher than ${person02.fullname}s BMI ${person02.BMI}!` : `${person02.fullname}s BMI ${person02.BMI} is higher than ${person01.fullname}s BMI ${person01.BMI}!`)
+
+
+
+// For loops keeps running while condition is true
+for (let rep = 1; rep <= 10; rep++) {
+  console.log("Lifting weights repetition " + rep);
+}
+
+*/
+
+const jonasArray = [
+  "Jonas",
+  "Santos",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+  // Reading from jonas array
+  console.log(jonasArray[i], typeof jonasArray[i]);
+
+  // types[i] = typeof jonasArray[i];
+  types.push(typeof jonasArray[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let item of years) {
+  ages.push(2037 - item);
+}
+
+console.log(ages);
+
+// Continue and break
+console.log("--- Only Strings ---");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+console.log("--- Only Number ---");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] === "number") break;
+
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+console.log("--- Break Number ---");
+for (let value of jonasArray) {
+  if (typeof value === "number") break;
+
+  console.log(value);
+}
