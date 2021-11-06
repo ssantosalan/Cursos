@@ -474,6 +474,7 @@ console.log(dice);
 const bills = [20, 295, 176, 440, 37, 105, 10, 100, 86, 52];
 const tips = [];
 const totals = [];
+const arr = [8, 6, 10];
 
 const calcTip = (bill) => {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
@@ -488,6 +489,15 @@ for (let i = 0; i <= bills.length - 1; i++) {
 }
 
 console.log(tips);
-console.log(bills)
+console.log(bills);
 console.log(totals);
 
+const calcAverage = function (array) {
+  let sum = 0;
+  for (let value of array) {
+    sum = sum + value;
+  }
+  return sum / array.length;
+};
+
+console.log(calcAverage(arr));
