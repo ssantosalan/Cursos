@@ -480,11 +480,8 @@ const calcTip = (bill) => {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
 
-for (let value of bills) {
-  tips.push(calcTip(value));
-}
-
 for (let i = 0; i <= bills.length - 1; i++) {
+  tips.push(calcTip(bills[i]));
   totals[i] = bills[i] + tips[i];
 }
 
