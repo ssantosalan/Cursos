@@ -457,7 +457,7 @@ for (let exercise = 1; exercise < 4; exercise++) {
   }
 }
 
-*/
+
 
 let dice  = Math.trunc(Math.random() * 6) + 1;
 console.log(dice);
@@ -468,3 +468,26 @@ while (dice !== 6) {
 }
 
 console.log(dice);
+
+*/
+
+const bills = [20, 295, 176, 440, 37, 105, 10, 100, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = (bill) => {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+for (let value of bills) {
+  tips.push(calcTip(value));
+}
+
+for (let i = 0; i <= bills.length - 1; i++) {
+  totals[i] = bills[i] + tips[i];
+}
+
+console.log(tips);
+console.log(bills)
+console.log(totals);
+
