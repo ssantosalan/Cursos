@@ -435,7 +435,7 @@ for (let value of jonasArray) {
 }
 
 
-*/
+
 
 const jonas = [
   "Jonas",
@@ -456,3 +456,15 @@ for (let exercise = 1; exercise < 4; exercise++) {
     console.log(`Lifting weight repetition ${rep}`);
   }
 }
+
+*/
+
+let dice  = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice  = Math.trunc(Math.random() * 6) + 1;
+}
+
+console.log(dice);
