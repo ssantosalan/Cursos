@@ -469,7 +469,6 @@ while (dice !== 6) {
 
 console.log(dice);
 
-*/
 
 const bills = [20, 295, 176, 440, 37, 105, 10, 100, 86, 52];
 const tips = [];
@@ -498,3 +497,6 @@ const calcAverage = function (array) {
 };
 
 console.log(calcAverage(arr));
+
+
+*/
