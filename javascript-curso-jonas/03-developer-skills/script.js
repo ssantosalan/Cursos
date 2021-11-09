@@ -90,6 +90,7 @@ console.log(amplitudeBug);
 // Coding challenge #1
 
 const maxTemperatures = [17, 21, 23];
+const maxTemperatures2 = [12, 5, -5, 0, 4];
 
 const printForecast = function (arr) {
   let stringTemp = "... ";
@@ -100,3 +101,5 @@ const printForecast = function (arr) {
 };
 
 printForecast(maxTemperatures);
+
+printForecast(maxTemperatures2);
