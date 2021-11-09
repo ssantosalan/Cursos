@@ -42,7 +42,7 @@ const calcTempAmplitudeNew = function (t1, t2) {
 const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
 console.log(amplitudeNew);
 
-*/
+
 
 const measureKelvin = function () {
   const measurement = {
@@ -84,3 +84,19 @@ const calcTempAmplitudeBug = function (t1, t2) {
 
 const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
 console.log(amplitudeBug);
+
+*/
+
+// Coding challenge #1
+
+const maxTemperatures = [17, 21, 23];
+
+const printForecast = function (arr) {
+  let stringTemp = "... ";
+  for (let i = 0; i <= arr.length - 1; i++) {
+    stringTemp += `${arr[i]}C in ${i + 1} days ... `;
+  }
+  return console.log(stringTemp);
+};
+
+printForecast(maxTemperatures);
