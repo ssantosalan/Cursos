@@ -13,14 +13,14 @@ console.log(document.querySelector(".guess").value);
 */
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 5;
-
+let score = 15;
+let highscore = 0;
 document.querySelector(".again").addEventListener("click", function () {
-  score = 5;
+  score = 15;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 
   document.querySelector(".message").textContent = "Start guessing...";
-  document.querySelector(".score").textContent = "5";
+  document.querySelector(".score").textContent = "15";
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "#222";
@@ -38,7 +38,11 @@ document.querySelector(".check").addEventListener("click", function () {
     // When player wins
   } else if (guess === secretNumber) {
     document.querySelector(".message").textContent = "🎉 Correct Number!";
-    score += 10;
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
 
     document.querySelector(".number").textContent = secretNumber;
 
