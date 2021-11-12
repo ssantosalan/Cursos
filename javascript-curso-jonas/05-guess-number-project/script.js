@@ -22,7 +22,9 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".message").textContent = "Start guessing...";
   document.querySelector(".score").textContent = "5";
   document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
 });
 
 document.querySelector(".check").addEventListener("click", function () {
