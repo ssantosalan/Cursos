@@ -25,7 +25,7 @@
     • Git e GitHub [20 Horas]
     • C# [10 horas]
     • Java [40 horas]
-    • Java POO [40 Horas]
+    • Java Object-oriented programming (OOP) [40 Horas]
     • HTML [17 horas]
     • HTML5 e CSS3 módulo 1 [40 horas]
     • HTML5 e CSS3 módulo 2 [40 horas]
