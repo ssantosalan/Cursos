@@ -9,7 +9,7 @@ const current0El = document.getElementById("current--0");
 const current1El = document.getElementById("current--1");
 
 const diceEl = document.querySelector(".dice");
-const btnNew = document.querySelector(".btnNew");
+const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
@@ -18,7 +18,7 @@ score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add("hidden");
 
-const scores = [0, 0];
+let scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
@@ -34,7 +34,7 @@ const switchPlayer = function () {
 // Rolling dice functionlity
 btnRoll.addEventListener("click", function () {
   if (playing) {
-    // 1. Genereting a ranadom dice roll
+    // 1. Genereting a random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
     console.log(dice);
     // 2. Display dice
@@ -62,7 +62,7 @@ btnHold.addEventListener("click", function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     // 2. Check if player's score is >= 100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 10) {
       // Finish the game
       playing = false;
       diceEl.classList.add("hidden");
@@ -76,5 +76,39 @@ btnHold.addEventListener("click", function () {
       // Switch to the next player
       switchPlayer();
     }
+  }
+});
+
+btnNew.addEventListener("click", function () {
+  //Reset the score
+  document.getElementById(`score--0`).textContent = 0;
+  document.getElementById(`score--1`).textContent = 0;
+  scores = [0, 0];
+  //Reset the current score
+  document.getElementById(`current--0`).textContent = 0;
+  document.getElementById(`current--1`).textContent = 0;
+  currentScore = 0;
+  //Vanish with dice
+  diceEl.classList.add("hidden");
+  //Start with player 1
+  if (activePlayer === 1) {
+    switchPlayer();
+  }
+
+  //If the game is over
+  if (!playing) {
+    document.querySelector(`.player--0`).classList.remove("player--winner");
+
+    document.querySelector(`.player--1`).classList.remove("player--winner");
+
+    document
+      .querySelector(`.player--1`)
+      .classList.remove("player--active");
+
+    document
+      .querySelector(`.player--0`)
+      .classList.add("player--active");
+
+    playing = true;
   }
 });
