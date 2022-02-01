@@ -42,8 +42,8 @@ const game = {
 };
 
 //1. Create one player array for each team (variables 'players1' and 'players2')
-const players1 = game.players[0];
-const players2 = game.players[1];
+const [players1, players2] = game.players;
+console.log(players1, players2);
 
 //2. The first player in any player array is the goalkeeper and the others are field players. For Bayern Munich (team 1) create one variable ('gk') with the goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10 field players
 const [gp, ...fieldPlayers] = players1;
@@ -57,9 +57,14 @@ const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
 
 //5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
-const team1 = game.odds.team1;
-const draw = game.odds.x;
-const team2 = game.odds.team2;
+
+// const team1 = game.odds.team1;
+// const draw = game.odds.x;
+// const team2 = game.odds.team2;
+
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
 
 console.log(team1, draw, team2);
 
@@ -79,10 +84,12 @@ const printGoals = function (...players) {
     numberOfGoals += 1;
   });
 
-  console.log(numberOfGoals);
+  console.log(...players, numberOfGoals);
 };
 
-printGoals('Azul', 'Pássaro', 'teste');
+printGoals(...game.scored);
 
 // 7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, without using an if/else statement or the ternary operator.
 
+team1 < team2 && console.log('Team 1 is more likely to win');
+team1 > team2 && console.log('Team 2 is more likely to win');
