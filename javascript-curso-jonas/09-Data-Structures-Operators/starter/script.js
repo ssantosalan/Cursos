@@ -4,6 +4,23 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -12,26 +29,14 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  //ES enhanced object literals
+  openingHours,
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+  orderDelivery({ starterIndex, mainIndex, time, address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
@@ -49,29 +54,100 @@ const restaurant = {
   },
 };
 
-console.log('----------- OR -----------');
-// Use ANY data type, return ANY data type, short-circuiting
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// WITH optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
 
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
-
-console.log('----------- AND -----------');
-console.log(0 && 'Jonas');
-console.log(7 && 'Jonas');
-console.log(7 && '');
-
-// Practical example
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
 }
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'Jonas', email: 'hello@g...' }];
+console.log(users[0]?.name ?? `User array empty`);
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu) console.log(item);
+
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// console.log([...menu.entries()]);
+
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 0,
+// };
+
+// const rest2 = {
+//   name: 'La Piazza',
+//   owner: 'Giovanni Rossi',
+// };
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// OR assignment operator
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// // Nullish assignment operator (null or undefined)
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// // rest1.owner = rest1.owner && '<ANONYMOUS>';
+// // rest2.owner = rest2.owner && '<ANONYMOUS>';
+// rest1.owner &&= '<ANONYMOUS>';
+// rest2.owner &&= '<ANONYMOUS>';
+
+// console.log(rest1);
+// console.log(rest2);
+// console.log(rest1.numGuests);
+// console.log(rest2.numGuests);
+
+// restaurant.numGuests = 0;
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// // Nullish: null and undefined (NOT 0 or '')
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
+
+// console.log('----------- OR -----------');
+// // Use ANY data type, return ANY data type, short-circuiting
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
+
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// console.log('----------- AND -----------');
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+// console.log(7 && '');
+
+// // Practical example
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 // // 1) Destructuring
 // // SPREAD, because on right side of =
