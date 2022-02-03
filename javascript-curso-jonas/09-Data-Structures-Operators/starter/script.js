@@ -54,27 +54,63 @@ const restaurant = {
   },
 };
 
-// Keys
-const properties = Object.keys(openingHours);
+// // Sets
+// const ordersSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+// console.log(ordersSet);
 
-let openStr = `We are open on ${properties.length} days: `;
-for (const day of properties) {
-  openStr += `${day}, `;
-}
-console.log(openStr);
+// console.log(new Set('Jonas'));
 
-// Property VALUES
-const values = Object.values(openingHours);
-console.log(values);
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// ordersSet.delete('Risotto');
+// // ordersSet.clear();
+// console.log(ordersSet);
 
-// Entries object - gets prorpeties (keys) and prorpeties' values
-const entries = Object.entries(openingHours);
+// // Sets are also iterable
+// for (const order of ordersSet) console.log(order);
 
-// [key, value] <- destructuring 
-for (const [key, {open, close}] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`)
-}
+// // Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+// console.log(
+//   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+// );
 
+// //How many different latters are in the string
+
+// console.log(new Set('alansilvadossantos').size);
+
+// // Keys
+// const properties = Object.keys(openingHours);
+
+// let openStr = `We are open on ${properties.length} days: `;
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+// console.log(openStr);
+
+// // Property VALUES
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// // Entries object - gets prorpeties (keys) and prorpeties' values
+// const entries = Object.entries(openingHours);
+
+// // [key, value] <- destructuring
+// for (const [key, {open, close}] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`)
+// }
 
 // if (restaurant.openingHours && restaurant.openingHours.mon)
 //   console.log(restaurant.openingHours.mon.open);
