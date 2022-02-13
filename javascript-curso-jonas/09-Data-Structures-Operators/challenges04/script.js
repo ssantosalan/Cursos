@@ -216,6 +216,7 @@ Some_Variable
   calculate_AGE
 delayed_departure
 
+
 Should produce this output (5 separate console.log outputs):
 underscoreCase   ✅
 firstName        ✅✅
@@ -239,23 +240,26 @@ document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 // Pegar a informação no campo de texto
 document.querySelector('button').addEventListener('click', function () {
-  const text = document.querySelector('textarea').value;
+  const text = ''+ document.querySelector('textarea').value;
 
   //Se tiver sem texto
   if (!text) {
     console.log('Sem texto!');
   }
+  //transformar tudo em minúscula, sem espaço em branco
+  const textLower = text.toLowerCase().replaceAll(' ', '');
+  console.log(textLower);
+  // Tirar '_' e colocar Maiúscula
+  for (const word of textLower) {
+    if (word === '_') {
+      word
+    }
+  }
 
-  //transformar tudo em minúscula
-  
+  // const textReplace = textLower.replaceAll(' ', '');
+  // console.log(textReplace);
+  //tirar espaço em branco
+  // const textTrim = textLower.trim();
+  // console.log(textTrim);
 
 });
-
-
-
-
-
-
-
-
-
