@@ -240,26 +240,29 @@ document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 // Pegar a informação no campo de texto
 document.querySelector('button').addEventListener('click', function () {
-  const text = ''+ document.querySelector('textarea').value;
+  const text = '' + document.querySelector('textarea').value;
 
   //Se tiver sem texto
   if (!text) {
     console.log('Sem texto!');
   }
-  //transformar tudo em minúscula, sem espaço em branco
-  const textLower = text.toLowerCase().replaceAll(' ', '');
-  console.log(textLower);
-  // Tirar '_' e colocar Maiúscula
-  for (const word of textLower) {
-    if (word === '_') {
-      word
-    }
+  // separar os elementos
+  const rows = text.split('\n');
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_')
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'👽'.repeat(i + 1)}`);
   }
-
-  // const textReplace = textLower.replaceAll(' ', '');
-  // console.log(textReplace);
-  //tirar espaço em branco
-  // const textTrim = textLower.trim();
-  // console.log(textTrim);
-
 });
+
+/*
+underscore_case
+ first_name
+Some_Variable
+  calculate_AGE
+delayed_departure
+*/
