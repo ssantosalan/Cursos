@@ -221,6 +221,7 @@ Test data for bonus:
 Hints: Use many of the tools you learned about in this and the last section 😉
 GOOD LUCK 😀 */
 
+/* 
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -261,3 +262,16 @@ const displayResults = function (type) {
     console.log(`Poll results are ${poll.answers}`);
   }
 };
+ VOLTA AQUI -------- */
+
+const runOnce = function () {
+  console.log(`Running immediately`);
+};
+runOnce();
+
+//IIFE
+(function () {
+  console.log(`This will never run again!`);
+})();
+
+(() => console.log('This will ALSO never run again!'))();
