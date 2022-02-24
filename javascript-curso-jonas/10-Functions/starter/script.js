@@ -31,12 +31,12 @@
 
 // const createBooking = function (
 //   flightNum,
-//   numPassangers = 1,
-//   price = 199 * numPassangers
+//   numPassengers = 1,
+//   price = 199 * numPassengers
 // ) {
 //   const booking = {
 //     flightNum,
-//     numPassangers,
+//     numPassengers,
 //     price,
 //   };
 //   console.log(booking);
@@ -264,7 +264,7 @@ const displayResults = function (type) {
 };
  VOLTA AQUI -------- */
 
-const runOnce = function () {
+/* const runOnce = function () {
   console.log(`Running immediately`);
 };
 runOnce();
@@ -274,4 +274,37 @@ runOnce();
   console.log(`This will never run again!`);
 })();
 
-(() => console.log('This will ALSO never run again!'))();
+(() => console.log('This will ALSO never run again!'))(); */
+//---------------
+
+// Closures;
+/* const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker); */
+
+/* // Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are no boardning all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+// const perGroup = 1000;
+boardPassengers(180, 3); */
