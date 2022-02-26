@@ -221,31 +221,34 @@ Test data for bonus:
 Hints: Use many of the tools you learned about in this and the last section 😉
 GOOD LUCK 😀 */
 
-/* 
-const poll = {
+/* const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
 
+  //Get answer
   registerNewAnswer() {
     const answer = Number(
       window.prompt(
-        `${this.question}
-0: JavaScript
-1: Python
-2: Rust
-3: C++
-(Write option number)`
+        `${this.question}\n${this.options.join('\n')}\n(Write option number)`
       )
     );
-    if (answer >= 0 && answer < 4) {
-      this.answers[answer]++;
-    } else {
-      window.alert(`Não há essa alternativa.`);
-    }
 
-    displayResults(poll.answers);
+    // Register answer
+    typeof answer === 'number' &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
+
+    this.displayResults();
+    this.displayResults('string');
+  },
+  displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      console.log(`Poll results are ${this.answers.join(', ')}`);
+    }
   },
 };
 
@@ -253,16 +256,8 @@ document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
 
-// 3. Create a method 'displayResults' which displays the poll results.
-const displayResults = function (type) {
-  console.log();
-  if (Array.isArray(type)) {
-    console.log(poll.answers);
-  } else if (String.isString(type)) {
-    console.log(`Poll results are ${poll.answers}`);
-  }
-};
- VOLTA AQUI -------- */
+poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+poll.displayResults.call({ answers: [5, 2, 3] }); */
 
 /* const runOnce = function () {
   console.log(`Running immediately`);
@@ -309,4 +304,4 @@ const boardPassengers = function (n, wait) {
 // const perGroup = 1000;
 boardPassengers(180, 3); */
 
-const teste = '';
+// const teste = '';
