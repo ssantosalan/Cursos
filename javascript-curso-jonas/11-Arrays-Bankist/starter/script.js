@@ -80,6 +80,18 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const creatUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+creatUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -150,7 +162,7 @@ movements.forEach(function(movement, index, array) {
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const eurToUsd = 1.1;
+/* const eurToUsd = 1.1;
 
 const movementsUSD = movements.map(function (mov) {
   return mov * eurToUsd;
@@ -159,7 +171,6 @@ const movementsUSD = movements.map(function (mov) {
 
 //Arrow function
 const movementsUSDArrow = movements.map(mov => mov * eurToUsd);
-
 console.log(movementsUSDArrow);
 
 const movementsDescription = movements.map(
@@ -169,4 +180,4 @@ const movementsDescription = movements.map(
     } ${mov}`
 );
 
-console.log(movementsDescription);
+console.log(movementsDescription); */
