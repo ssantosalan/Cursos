@@ -46,7 +46,7 @@
 
 ### URI:
 
-<p>• In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a></p>
+<p>• In the URI folder, there are some exercises done on the website <a href="https://www.urionlinejudge.com.br">URI</a>.</p>
 
 ### html-css:
 
