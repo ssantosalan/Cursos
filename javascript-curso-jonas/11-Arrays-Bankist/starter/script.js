@@ -332,8 +332,9 @@ Test data:
 § Data 2: [16, 6, 10, 5, 6, 1, 4]
 GOOD LUCK 😀 */
 
+/* 
 const ages = [5, 2, 4, 1, 15, 8, 3];
-const ages2 = [16, 6, 10, 5, 6, 1, 4];
+const ages2 = [16, 6, 10, 5, 6, 1, 4]; */
 
 /* const calcAverageHumanAge = function (ages) {
   const humanAge = ages
@@ -344,10 +345,22 @@ const ages2 = [16, 6, 10, 5, 6, 1, 4];
   return humanAge
 }; */
 
-const calcAverageHumanAge = ages =>
+/* const calcAverageHumanAge = ages =>
   ages
     .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
     .filter(age => age >= 18)
     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
 
-console.log(calcAverageHumanAge(ages));
+console.log(calcAverageHumanAge(ages)); */
+
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis')
+
+console.log(account);
+
+
+
+for (conta of accounts) {
+  
+}
