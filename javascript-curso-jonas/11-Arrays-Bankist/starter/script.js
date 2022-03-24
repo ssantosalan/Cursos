@@ -355,12 +355,18 @@ console.log(calcAverageHumanAge(ages)); */
 
 console.log(accounts);
 
-const account = accounts.find(acc => acc.owner === 'Jessica Davis')
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 
 console.log(account);
 
+const conta = contas => {
+  for (let account of accounts) {
+    const contaDona = accounts.filter(
+      account => account.owner === 'Jessica Davis'
+    );
 
+    return contaDona.reduce(conta => conta.owner);
+  }
+};
 
-for (conta of accounts) {
-  
-}
+console.log(conta(accounts));
