@@ -9,14 +9,14 @@ const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
   interestRate: 1.2, // %
-  pin: 1111,
+  pin: 1,
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'Alan Santos',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
-  pin: 2222,
+  pin: 2,
 };
 
 const account3 = {
@@ -78,12 +78,10 @@ const displayMovements = function (movements) {
   });
 };
 
-const calcDisplaytBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance}€`;
+const calcDisplaytBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance}€`;
 };
-
-calcDisplaytBalance(account1.movements);
 
 const calcDisplaytSummary = function (acc) {
   const incomes = acc.movements
@@ -115,6 +113,15 @@ const creatUsernames = function (accs) {
 };
 creatUsernames(accounts);
 
+const updateUI = function (acc) {
+  // Display movements
+  displayMovements(acc.movements);
+  // Display balance
+  calcDisplaytBalance(acc);
+  // Display summary
+  calcDisplaytSummary(acc);
+};
+
 let currentAccount;
 
 btnLogin.addEventListener('click', function (e) {
@@ -138,12 +145,32 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    // Display movements
-    displayMovements(currentAccount.movements);
-    // Display balance
-    calcDisplaytBalance(currentAccount.movements);
-    // Display summary
-    calcDisplaytSummary(currentAccount);
+    //Update UI
+    updateUI(currentAccount);
+  }
+});
+
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+
+  inputTransferAmount.value = inputTransferTo.value = '';
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.username !== currentAccount.username
+  ) {
+    // Doing the transfer
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+
+    //Update UI
+    updateUI(currentAccount);
   }
 });
 
@@ -247,7 +274,7 @@ console.log(deposits);
 const withdraw = movements.filter(mov => mov < 0);
 console.log(withdraw); */
 
-console.log(movements);
+// console.log(movements);
 
 // accumulator -> SNOWBALL
 /* const balance = movements.reduce(function (acc, cur, i, arr) {
