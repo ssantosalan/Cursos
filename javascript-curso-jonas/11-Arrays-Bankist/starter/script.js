@@ -538,7 +538,7 @@ console.log(movements); */
 
 // More Ways of Creating and Filling Arrays;
 
-const arr = [1, 2, 3];
+/* const arr = [1, 2, 3];
 console.log(new Array(1, 2, 3));
 
 // Empty arrays + fill method
@@ -566,4 +566,17 @@ labelBalance.addEventListener('click', function () {
   );
 
   console.log(movementsUI);
-});
+}); */
+
+// Array Methods Practice
+
+// 1.
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepositSum);
+
+// 2.
+
