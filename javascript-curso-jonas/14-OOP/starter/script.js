@@ -45,3 +45,12 @@ console.log(Person.prototype.isPrototypeOf(Person));
 Person.prototype.species = 'Homo Sapies'
 console.log(jonas.hasOwnProperty('firstName'));
 console.log(jonas.hasOwnProperty('species'));
+
+// Prototypal Inheritance on Built-In Objects;
+
+console.log(jonas.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(jonas.__proto__.__proto__);
+console.log(jonas.__proto__.__proto__.__proto__);
+
+console.dir(Person.prototype.constructor);
