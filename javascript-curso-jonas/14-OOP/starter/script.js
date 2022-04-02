@@ -1,26 +1,33 @@
 'use strict';
 
-// const Person = function (firstName, birthYear) {
-//   this.firstName = firstName;
-//   this.birthYear = birthYear;
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
 
-//   // Never do this
-//   // this.calcAge = function () {
-//   //   console.log(2037 - this.birthYear);
-//   // };
-// };
+  // Never do this
+  // this.calcAge = function () {
+  //   console.log(2037 - this.birthYear);
+  // };
+};
 
-// const jonas = new Person('Jonas', 1991);
-// console.log(jonas);
+const jonas = new Person('Jonas', 1991);
+console.log(jonas);
+
+Person.hey = function () {
+  console.log('Hey there 🖖');
+};
+
+Person.hey();
+
 // // 1. New {} is created
 // // 2. functions is called, this = {}
 // // 3. {} linked to prototype
 // // 4. function automatically return {}
 
-// const matilda = new Person('Matilda', 2017);
-// const jack = new Person('Jack', 2017);
+const matilda = new Person('Matilda', 2017);
+const jack = new Person('Jack', 2017);
 
-// console.log(matilda, jack);
+console.log(matilda, jack);
 
 // const jay = 'Jay';
 
@@ -117,9 +124,43 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  static hey() {
+    console.log('Hey there 🖖');
+    console.log(this);
+  }
 }
 
 const jessica = new PersonCl('Jessica Davis', 1996);
 console.log(jessica);
 jessica.calcAge();
 console.log(jessica.age);
+
+const alan = new PersonCl('Alan Santos', 1996);
+
+PersonCl.hey();
+
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 2002;
+steven.calcAge();
+
+console.log(steven.__proto__ === PersonProto);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1979);
+sarah.calcAge();
+
+// Coding Challenge #2
