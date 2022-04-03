@@ -1,33 +1,28 @@
 'use strict';
 
-const Person = function (firstName, birthYear) {
-  this.firstName = firstName;
-  this.birthYear = birthYear;
+// const Person = function (firstName, birthYear) {
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
+// };
 
-  // Never do this
-  // this.calcAge = function () {
-  //   console.log(2037 - this.birthYear);
-  // };
-};
+// const jonas = new Person('Jonas', 1991);
+// console.log(jonas);
 
-const jonas = new Person('Jonas', 1991);
-console.log(jonas);
+// Person.hey = function () {
+//   console.log('Hey there 🖖');
+// };
 
-Person.hey = function () {
-  console.log('Hey there 🖖');
-};
-
-Person.hey();
+// Person.hey();
 
 // // 1. New {} is created
 // // 2. functions is called, this = {}
 // // 3. {} linked to prototype
 // // 4. function automatically return {}
 
-const matilda = new Person('Matilda', 2017);
-const jack = new Person('Jack', 2017);
+// const matilda = new Person('Matilda', 2017);
+// const jack = new Person('Jack', 2017);
 
-console.log(matilda, jack);
+// console.log(matilda, jack);
 
 // const jay = 'Jay';
 
@@ -95,7 +90,7 @@ console.log(matilda, jack);
 
 // Class declaration
 
-class PersonCl {
+/* class PersonCl {
   constructor(fullName, birthYear) {
     this.fullName = fullName;
     this.birthYear = birthYear;
@@ -164,3 +159,69 @@ sarah.init('Sarah', 1979);
 sarah.calcAge();
 
 // Coding Challenge #2
+
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(this.speed);
+  }
+  brake() {
+    this.speed -= 5;
+    console.log(this.speed);
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+const car1 = new CarCl('Ford', 120);
+console.log(car1);
+car1.accelerate();
+car1.brake();
+console.log(car1.speedUS);
+car1.speedUS = 100;
+console.log(car1);
+ */
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+// Linking prototypes
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+console.log(mike);
+mike.introduce();
+mike.calcAge();
+
+// Challenger 03
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
