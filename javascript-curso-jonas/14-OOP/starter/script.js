@@ -371,17 +371,15 @@ class Account {
   }
   withdraw(val) {
     this.deposit(-val);
-    return this
+    return this;
   }
-
- 
 
   requestLoan(val) {
     if (this._approveLoan(val)) {
       this.deposit(val);
       console.log(`Loan approved`);
     }
-    return this
+    return this;
   }
 
   // 4) Private methods
@@ -392,7 +390,6 @@ class Account {
   _approveLoan(val) {
     return true;
   }
-  
 }
 
 const acc1 = new Account('Jonas', 'EUR', 1111);
@@ -406,5 +403,83 @@ console.log(acc1);
 console.log(acc1._pin);
 
 // Chaining
-acc1.deposit(300).deposit(500).withdraw(35).requestLoan(500).withdraw(5000)
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(500).withdraw(5000);
 
+// Challenger 03
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Car.prototype.accelerate = function () {
+  this.speed += 20;
+  this.charge = this.charge * 0.99;
+  console.log(
+    `${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`
+  );
+};
+const EV = function (make, speed, charge) {
+  Car.call(this, make, speed);
+  this.charge = charge;
+};
+
+EV.prototype = Object.create(Car.prototype);
+
+EV.prototype.chargeBattery = function (chargeTo) {
+  this.charge = chargeTo;
+};
+
+const carE01 = new EV('Tesla', 120, 80);
+
+carE01.accelerate();
+carE01.chargeBattery(90);
+console.log(carE01);
+
+// Challenge 04
+
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 20;
+    this.charge = this.charge * 0.99;
+    console.log(
+      `${this.make} going at ${this.speed}km/h, with a charge of ${this.charge}%`
+    );
+    return this;
+  }
+
+  brake() {
+    this.speed -= 5;
+    return this;
+  }
+}
+
+class EVCl extends CarCl {
+  #charge;
+
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this.#charge = charge;
+  }
+
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo;
+    return this;
+  }
+
+  accelerate() {
+    this.speed += 20;
+    this.#charge--;
+    return this;
+  }
+}
+
+const rivian = new EVCl('Rivian', 120, 23);
+console.log(rivian);
+rivian.accelerate().chargeBattery(100).brake();
+console.log(rivian);
