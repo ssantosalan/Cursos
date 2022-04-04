@@ -339,39 +339,60 @@ martha.calcAge(); */
 // jay.calcAge();
 
 class Account {
+  // 1) Public fields (instances)
+  // locale = navigator.language;
+  // _movements =  [];
+  locale = navigator.language;
+
+  // 2) Private fields (Instances)
+  #movements = [];
+  #pin;
+
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
     // Protected property
     this._pin = pin;
-    this._movements = [];
+    this.#movements = [];
     this.locale = navigator.language;
 
     console.log(`Thanks for  opening an account, ${owner}`);
   }
 
-  // Public interfac
+  // 3) Public Methods
+  // Public interface
   getMovements() {
-    return this._movements;
+    return this.#movements;
   }
 
   deposit(val) {
-    this._movements.push(val);
+    this.#movements.push(val);
+    return this;
   }
   withdraw(val) {
     this.deposit(-val);
+    return this
   }
 
-  _approveLoan(val) {
-    return true;
-  }
+ 
 
   requestLoan(val) {
     if (this._approveLoan(val)) {
       this.deposit(val);
       console.log(`Loan approved`);
     }
+    return this
   }
+
+  // 4) Private methods
+  // #approveLoan(val) {
+  //   return true;
+  // }
+
+  _approveLoan(val) {
+    return true;
+  }
+  
 }
 
 const acc1 = new Account('Jonas', 'EUR', 1111);
@@ -383,3 +404,7 @@ console.log(acc1.getMovements());
 
 console.log(acc1);
 console.log(acc1._pin);
+
+// Chaining
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(500).withdraw(5000)
+
