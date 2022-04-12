@@ -117,14 +117,16 @@ const getCountryData = function (country) {
 
 // ----------------------------------------------------------
 
-const getJSON = function (url, errorMsg = 'Something went wrong') {
+/* const getJSON = function (url, errorMsg = 'Something went wrong') {
   return fetch(url).then(response => {
     if (!response.ok) {
       throw new Error(`${errorMsg} (${response.status})`);
     }
     return response.json();
   });
-};
+}; */
+
+//-------------------------------
 
 // const getCountryData = function (country) {
 //   fetch(`https://restcountries.com/v2/name/${country}`)
@@ -212,7 +214,9 @@ btn.addEventListener('click', function () {
 //   countriesContainer.insertAdjacentHTML('beforeend', html);
 // }
 
-const getCountryData = function (country) {
+// ----------
+
+/* const getCountryData = function (country) {
   fetch(`https://restcountries.com/v2/name/${country}`)
     .then(function (response) {
       console.log(response);
@@ -237,13 +241,72 @@ const whereAmI = function (lat, lng) {
       console.log(data);
       console.log(`You are in ${data.city}, ${data.countryName}`);
 
-      return  fetch(`https://restcountries.com/v2/name/${data.countryName}`)
+      return fetch(`https://restcountries.com/v2/name/${data.countryName}`);
     })
     .then(response => {
       if (!response.ok)
         throw new Error(`Country not found (${response.status})`);
 
-        return response.json();
+      return response.json();
+    })
+    .then(data => renderCountry(data[0]))
+    .catch(err => {
+      console.error(`${err.message}!!!!!`);
+    });
+};
+ */
+
+// ------------
+/* whereAmI(52.508, 13.381);
+whereAmI(19.037, 72.873);
+whereAmI(-33.933, 18.474);
+whereAmI(-33.933, 18.474); */
+
+// ----------------------------
+
+/* navigator.geolocation.getCurrentPosition(
+  position => console.log(position),
+  err => console.error(err)
+);
+console.log('Getting position'); */
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   position => resolve(position),
+    //   err => reject(err)
+    // );
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+getPosition().then(pos => console.log(pos));
+
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+
+      return fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
+      );
+    })
+    .then(response => {
+      if (!response.ok) throw new Error(`Errou ${response.status}`);
+
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      console.log(`You are in ${data.city}, ${data.countryName}`);
+
+      return fetch(`https://restcountries.com/v2/name/${data.countryName}`);
+    })
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Country not found (${response.status})`);
+
+      return response.json();
     })
     .then(data => renderCountry(data[0]))
     .catch(err => {
@@ -251,7 +314,4 @@ const whereAmI = function (lat, lng) {
     });
 };
 
-whereAmI(52.508, 13.381);
-whereAmI(19.037, 72.873);
-whereAmI(-33.933, 18.474);
-whereAmI(-33.933, 18.474);
+btn.addEventListener('click', whereAmI);
