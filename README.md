@@ -29,7 +29,8 @@
     • HTML [17 horas]
     • HTML5 e CSS3 módulo 1 [40 horas]
     • HTML5 e CSS3 módulo 2 [40 horas]
-    • JavaScript [40 horas]
+    • JavaScript Cursoemvideo[40 horas]
+    • JavaScript Udemy[69 horas]
     • MySQL [40 Horas]
     • Pacote Office 2010 
         MS Excel [54 horas]
