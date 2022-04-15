@@ -317,3 +317,9 @@ const whereAmI = function () {
 btn.addEventListener('click', whereAmI);
 
 '';
+
+
+
+// Coding challenge ##2
+
+const createImage = fu
