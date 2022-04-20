@@ -387,7 +387,7 @@ const whereAmI = async function () {
     const resGeo = await fetch(
       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
     );
-    if(!resGeo.ok) throw new Error('Problem getting location data')
+    if (!resGeo.ok) throw new Error('Problem getting location data');
 
     const dataGeo = await resGeo.json();
     console.log(dataGeo);
@@ -396,15 +396,65 @@ const whereAmI = async function () {
     const res = await fetch(
       `https://restcountries.com/v2/name/${dataGeo.countryName}`
     );
-    if(!res.ok) throw new Error('Problem getting location data')
+    if (!res.ok) throw new Error('Problem getting location data');
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     renderCountry(data[0]);
+
+    return `Returning the value of a promisse. ${dataGeo.city} and ${dataGeo.countryName}`;
   } catch (err) {
     console.error(err);
     renderError(`Something went wrong ${err.message}`);
+
+    // Reject promise returned from async function
+    throw err;
   }
 };
-whereAmI();
 
-console.log('First');
+// console.log('First');
+// whereAmI()
+//   .then(city => console.log(city))
+//   .catch(err => console.error(err.message))
+//   .finally(() => console.log('Third'));
+
+// (async function () {
+//   try {
+//     const city = await whereAmI();
+//     console.log(city);
+//   } catch (err) {
+//     console.error(err.message + "ERROU");
+//   }
+//   console.log('Third');
+// })();
+
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) {
+      throw new Error(`${errorMsg} (${response.status})`);
+    }
+    return response.json();
+  });
+};
+
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    // const [data1] = await getJSON(`https://restcountries.com/v2/name/${c1}`);
+
+    // const [data2] = await getJSON(`https://restcountries.com/v2/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v2/name/${c3}`);
+
+    // console.log(data1.capital, data2.capital, data3.capital);
+
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v2/name/${c1}`),
+      getJSON(`https://restcountries.com/v2/name/${c2}`),
+      getJSON(`https://restcountries.com/v2/name/${c3}`),
+    ]);
+
+    console.log(data.map(d => d[0].capital));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+get3Countries('brazil', 'Chile', 'Argentina');
