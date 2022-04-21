@@ -427,7 +427,7 @@ const whereAmI = async function () {
 //   console.log('Third');
 // })();
 
-const getJSON = function (url, errorMsg = 'Something went wrong') {
+/* const getJSON = function (url, errorMsg = 'Something went wrong') {
   return fetch(url).then(response => {
     if (!response.ok) {
       throw new Error(`${errorMsg} (${response.status})`);
@@ -457,4 +457,63 @@ const get3Countries = async function (c1, c2, c3) {
   }
 };
 
-get3Countries('brazil', 'Chile', 'Argentina');
+get3Countries('brazil', 'Chile', 'Argentina'); */
+
+// ------
+
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) {
+      throw new Error(`${errorMsg} (${response.status})`);
+    }
+    return response.json();
+  });
+};
+
+// Promise.race
+
+(async function () {
+  const c = await Promise.race([
+    getJSON(`https://restcountries.com/v2/name/brazil`),
+    getJSON(`https://restcountries.com/v2/name/italy`),
+    getJSON(`https://restcountries.com/v2/name/egypt`),
+  ]);
+  console.log(c);
+})();
+
+const timeout = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error('Request took too long!'));
+    }, sec * 1000);
+  });
+};
+
+Promise.race([getJSON(`https://restcountries.com/v2/name/brazil`), timeout(1)])
+  .then(res => console.log(res[0]))
+  .catch(err => console.error(err));
+
+/* // Promise.allSettled
+Promise.allSettled([
+  Promise.resolve('Sucess'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Another sucess'),
+]).then(res => console.log(res));
+
+Promise.all([
+  Promise.resolve('Sucess'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Another sucess'),
+]).then(res => console.log(res));
+
+// Promise.any [ES2021]
+Promise.any([
+  Promise.reject('Sucess'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Will get the first fullfilled promise'),
+]).then(res => console.log(res)); */
+
+
+// Coding challenge #3
+
+
