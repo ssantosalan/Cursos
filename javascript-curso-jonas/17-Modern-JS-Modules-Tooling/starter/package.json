@@ -4,12 +4,18 @@
   "description": "",
   "main": "clean.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "Alan",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.22.2",
     "leaflet": "^1.8.0",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
