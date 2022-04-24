@@ -1,30 +1,25 @@
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: "alan",
-//   age: 26,
-//   hobbies: ["Sports", "Cooking"],
-//   role: [0, 'author']
-// };
+function combine(
+  n1: number | string,
+  n2: number | string,
+  resultConversion: "as-number" | "as-text"
+) {
+  let result;
+  if (
+    (typeof n1 === "number" && typeof n2 === "number") ||
+    resultConversion === "as-number"
+  ) {
+    result = +n1 + +n2;
+  } else {
+    result = n1.toString() + n2.toString();
+  }
+  return result;
+}
 
-enum Role { ADMIN, READ_ONLY, AUTHOR};
+const combineAges = combine(25, 25, "as-number");
+console.log(combineAges);
 
-const person = {
-  name: "alan",
-  age: 26,
-  hobbies: ["Sports", "Cooking"],
-  role: Role.ADMIN,
-};
+const combineStringAges = combine("max", 25, "as-number");
+console.log(combineStringAges);
 
-if (person.role === Role.ADMIN) console.log('is author');
-
-
-//person.role.push('admin') // not allow with Tuples
-// person.role = [0, 'admin']
-
-let favoriteActivities: string[];
-
-console.log(person.name);
+const combineNames = combine("Alan", "Bárbara", "as-text");
+console.log(combineNames);
