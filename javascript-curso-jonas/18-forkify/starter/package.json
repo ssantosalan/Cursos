@@ -10,11 +10,20 @@
   "author": "Alan Santos",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.13.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.13.0",
     "parcel": "^2.0.0-beta.1",
     "sass": "^1.51.0"
   },
   "dependencies": {
     "core-js": "^3.22.3",
     "regenerator-runtime": "^0.13.9"
+  },
+  "babel": {
+    "plugins":
+    [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-private-methods"
+    ]
   }
 }
