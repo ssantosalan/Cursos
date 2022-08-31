@@ -17,11 +17,11 @@
   },
   "dependencies": {
     "core-js": "^3.22.3",
+    "fractional": "^1.0.0",
     "regenerator-runtime": "^0.13.9"
   },
   "babel": {
-    "plugins":
-    [
+    "plugins": [
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-private-methods"
     ]
