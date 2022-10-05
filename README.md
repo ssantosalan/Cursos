@@ -45,6 +45,7 @@
     • JavaScript
     • Java Spring
     • Java Spring Boot
+    • Angular + Spring Boot
     
 
 ### URI:
