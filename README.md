@@ -33,6 +33,7 @@
     • JavaScript Udemy[69 horas]
     • MySQL [40 Horas]
     • Formação Angular + Spring Boot [16 Horas]
+    • Spring Boot | Complete Course 2022 [2 horas]
     • Pacote Office 2010 
         MS Excel [54 horas]
         MS Outlook [11 horas]
