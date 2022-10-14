@@ -1,5 +1,7 @@
 package exercises;
 
+import java.util.Arrays;
+
 public class Kata {
 	public static int[] invert(int[] array) {
 		for (int i = 0; i < array.length; i++) {
@@ -20,6 +22,31 @@ public class Kata {
 			array[i] = (int) (s.charAt(length - i - 1)) - 48;
 		}
 		return array;
+	}
+
+	public static String highAndLow(String numbers) {
+		String[] strNumbers = numbers.split(" ");
+
+		String max = strNumbers[0];
+		int maxInt = Integer.parseInt(max);
+		String min = strNumbers[0];
+		int minInt = Integer.parseInt(min);
+
+		for (int i = 0; i < strNumbers.length; i++) {
+
+			if (Integer.parseInt(strNumbers[i]) > maxInt) {
+				max = strNumbers[i];
+				maxInt = Integer.parseInt(strNumbers[i]);
+			}
+
+			if (Integer.parseInt(strNumbers[i]) < minInt) {
+				min = strNumbers[i];
+				minInt = Integer.parseInt(strNumbers[i]);
+			}
+
+		}
+
+		return max + " " + min;
 	}
 
 }

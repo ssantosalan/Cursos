@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Isogram {
 	public static boolean isIsogram(String str) {
 		str = str.toLowerCase();
+		System.out.println(str.toLowerCase().chars().distinct().count());
 		char[] ch = new char[str.length()];
 
 		for (int i = 0; i < str.length(); i++) {
