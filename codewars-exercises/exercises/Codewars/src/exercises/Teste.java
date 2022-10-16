@@ -14,6 +14,10 @@ public class Teste {
 
 		System.out.println("HIGH AND LOW");
 		Kata.highAndLow("80 3 -5 42 -1 50 0 -9 4 7 4 -4");
+		
+		int[] numbers = {6, 2, 1, 8, 10};
+		var sum = new Sum();
+		System.out.println(sum.sum(numbers));
 
 	}
 
