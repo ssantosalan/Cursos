@@ -1,7 +1,5 @@
 package exercises;
 
-import java.util.Arrays;
-
 public class Kata {
 	public static int[] invert(int[] array) {
 		for (int i = 0; i < array.length; i++) {
@@ -47,6 +45,18 @@ public class Kata {
 		}
 
 		return max + " " + min;
+	}
+
+	public static String binaryAddition(int a, int b) {
+		return Integer.toBinaryString(a + b);
+	}
+
+	public static double getVolumeOfCuboid(final double length, final double width, final double height) {
+		return length * width * height;
+	}
+
+	public static int makeNegative(final int x) {
+		return x > 0 ? -(x) : x;
 	}
 
 }
