@@ -41,39 +41,54 @@ public class Teste {
 		System.out.println(Kata.makeNegative(5));
 
 		System.out.println("----FALSO");
-        System.out.println(Solution.validatePin("1"));
-        System.out.println(Solution.validatePin("12"));
-        System.out.println(Solution.validatePin("123"));
-        System.out.println(Solution.validatePin("12345"));
-        System.out.println(Solution.validatePin("1234567"));
-        System.out.println(Solution.validatePin("-1234"));
-        System.out.println(Solution.validatePin("1.234"));
-        System.out.println(Solution.validatePin("00000000"));
-        System.out.println("----FALSO");
-        System.out.println(Solution.validatePin("a234"));
-        System.out.println(Solution.validatePin(".234"));
-        System.out.println("----TRUE");
-        System.out.println(Solution.validatePin("1234"));
-        System.out.println(Solution.validatePin("0000"));
-        System.out.println(Solution.validatePin("1111"));
-        System.out.println(Solution.validatePin("123456"));
-        System.out.println(Solution.validatePin("098765"));
-        System.out.println(Solution.validatePin("000000"));
-        System.out.println(Solution.validatePin("090909"));
-        System.out.println("----NOVOS");
-        System.out.println(Solution.validatePin(" 123"));
-        System.out.println(Solution.validatePin(" 123 "));
-        System.out.println(Solution.validatePin("*123"));
-        System.out.println(Solution.validatePin("123a"));
-        System.out.println(Solution.validatePin("a23a"));
-        System.out.println(Solution.validatePin("a23a"));
-        System.out.println(Solution.validatePin("123*"));
-        System.out.println(Solution.validatePin(" 123"));
-        System.out.println(Solution.validatePin(" 123 "));
-        System.out.println(Solution.validatePin("123 "));
-        System.out.println(Solution.validatePin("123"));
-        
-
+		System.out.println(Solution.validatePin("1"));
+		System.out.println(Solution.validatePin("12"));
+		System.out.println(Solution.validatePin("123"));
+		System.out.println(Solution.validatePin("12345"));
+		System.out.println(Solution.validatePin("1234567"));
+		System.out.println(Solution.validatePin("-1234"));
+		System.out.println(Solution.validatePin("1.234"));
+		System.out.println(Solution.validatePin("00000000"));
+		System.out.println("----FALSO");
+		System.out.println(Solution.validatePin("a234"));
+		System.out.println(Solution.validatePin(".234"));
+		System.out.println("----TRUE");
+		System.out.println(Solution.validatePin("1234"));
+		System.out.println(Solution.validatePin("0000"));
+		System.out.println(Solution.validatePin("1111"));
+		System.out.println(Solution.validatePin("123456"));
+		System.out.println(Solution.validatePin("098765"));
+		System.out.println(Solution.validatePin("000000"));
+		System.out.println(Solution.validatePin("090909"));
+		System.out.println("----NOVOS");
+		System.out.println(Solution.validatePin(" 123"));
+		System.out.println(Solution.validatePin(" 123 "));
+		System.out.println(Solution.validatePin("*123"));
+		System.out.println(Solution.validatePin("123a"));
+		System.out.println(Solution.validatePin("a23a"));
+		System.out.println(Solution.validatePin("a23a"));
+		System.out.println(Solution.validatePin("123*"));
+		System.out.println(Solution.validatePin(" 123"));
+		System.out.println(Solution.validatePin(" 123 "));
+		System.out.println(Solution.validatePin("123 "));
+		System.out.println(Solution.validatePin("123"));
+		System.out.println("próxima");
+		System.out.println(TwiceAsOld.TwiceAsOld(80, 50));
+		int[] ar = { 2, 2, 2 };
+		System.out.println(Kata.squareSum(ar));
+		int[] ar2 = { 1, 1, 2 };
+		System.out.println(Kata.squareSum3(ar2));
+		String nome3 = "Alan silva dos santos";
+		String nome4 = "Alan teste dos santos";
+		JadenCase jadenCase = new JadenCase();
+		System.out.println(jadenCase.toJadenCase(nome3));
+		System.out.println(jadenCase.toJadenCase2(nome4));
+		
+		String phraseUsada = "vamos, alan!";
+		System.out.println(jadenCase.capitalizeFirstLetter(phraseUsada));
+		System.out.println("next");
+		System.out.println(Printer.printerError("abcdmno"));
+		System.out.println(Printer.printerError("abc"));
 	}
 
 }

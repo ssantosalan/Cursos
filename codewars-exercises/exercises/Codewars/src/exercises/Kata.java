@@ -1,5 +1,7 @@
 package exercises;
 
+import java.util.Arrays;
+
 public class Kata {
 	public static int[] invert(int[] array) {
 		for (int i = 0; i < array.length; i++) {
@@ -57,6 +59,23 @@ public class Kata {
 
 	public static int makeNegative(final int x) {
 		return x > 0 ? -(x) : x;
+	}
+
+	public static int squareSum(int[] n) {
+		int soma = 0;
+		for (int i = 0; i < n.length; i++) {
+			n[i] = n[i] * n[i];
+			soma += n[i];
+		}
+		return soma;
+	}
+
+	public static int squareSum2(int[] xs) {
+		return Arrays.stream(xs).map(x -> x * x).sum();
+	}
+
+	public static int squareSum3(int[] xs) {
+		return Arrays.stream(xs).reduce(0, (acc, number) -> acc + number * number);
 	}
 
 }
