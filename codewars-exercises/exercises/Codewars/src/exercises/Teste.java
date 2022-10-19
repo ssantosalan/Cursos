@@ -1,6 +1,9 @@
 package exercises;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Teste {
 
@@ -83,12 +86,22 @@ public class Teste {
 		JadenCase jadenCase = new JadenCase();
 		System.out.println(jadenCase.toJadenCase(nome3));
 		System.out.println(jadenCase.toJadenCase2(nome4));
-		
+
 		String phraseUsada = "vamos, alan!";
 		System.out.println(jadenCase.capitalizeFirstLetter(phraseUsada));
 		System.out.println("next");
-		System.out.println(Printer.printerError("abcdmno"));
-		System.out.println(Printer.printerError("abc"));
+//		System.out.println(Printer.printerError("abcdmno"));
+//		System.out.println(Printer.printerError("abc"));
+		System.out.println("outro");
+		ArrayList<Integer> listaBinary = new ArrayList<>(Arrays.asList(0, 0, 0, 1));
+		ArrayList<Integer> listaBinary2 = new ArrayList<>(Arrays.asList(0, 0, 1, 0));
+		System.out.print("tem que dá 1: ");
+		System.out.println(BinaryArrayToNumber.ConvertBinaryArrayToInt(listaBinary));
+		System.out.print("tem que dá 2: ");
+		System.out.println(BinaryArrayToNumber.ConvertBinaryArrayToInt(listaBinary2));
+//		System.out.println("Próximo");
+
+
 	}
 
 }
