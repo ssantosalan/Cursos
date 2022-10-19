@@ -99,8 +99,13 @@ public class Teste {
 		System.out.println(BinaryArrayToNumber.ConvertBinaryArrayToInt(listaBinary));
 		System.out.print("tem que dá 2: ");
 		System.out.println(BinaryArrayToNumber.ConvertBinaryArrayToInt(listaBinary2));
-//		System.out.println("Próximo");
-
+		System.out.println("Próximo");
+//		String[] nomes = {"Peter"};
+//		String[] nomes = {"Peter", "Alan"};
+//		String[] nomes = {"Peter", "Alan", "joao"};
+//		String[] nomes = {"Peter", "Alan", "joao", "maria"};
+		String[] nomes = {""};
+		System.out.println(Solution.whoLikesIt(nomes));
 
 	}
 

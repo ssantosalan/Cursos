@@ -16,7 +16,8 @@ public class BinaryArrayToNumber {
 		number = Integer.toBinaryString(binaryNumber);
 //		System.out.println("number binário " + number); 
 		return Integer.parseInt(number);
-
+		
+		
 		
 	}
 }
