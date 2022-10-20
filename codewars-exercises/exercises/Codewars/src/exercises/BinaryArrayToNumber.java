@@ -4,20 +4,17 @@ import java.util.List;
 
 public class BinaryArrayToNumber {
 	public static int ConvertBinaryArrayToInt(List<Integer> binary) {
-		String number = "";
+		String binaryString = "";
 		for (int item : binary) {
-			number = number + String.valueOf(item);
+			binaryString = binaryString + String.valueOf(item);
 		}
-		System.out.println("número junto: " + number);
-		
-		int binaryNumber = Integer.parseInt(number);
-		System.out.println("número em int: " + binaryNumber);
-//		System.out.println("Binário: " + binaryNumber);
-		number = Integer.toBinaryString(binaryNumber);
-//		System.out.println("number binário " + number); 
-		return Integer.parseInt(number);
-		
-		
-		
+		int decimal = Integer.parseInt(binaryString, 2);
+
+		return decimal;
+
+	}
+
+	public static int ConvertBinaryArrayToInt2(List<Integer> binary) {
+		return binary.stream().reduce((x, y) -> x * 2 + y).get();
 	}
 }
