@@ -1,6 +1,7 @@
 package exercises;
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class Kata {
 	public static int[] invert(int[] array) {
@@ -76,6 +77,21 @@ public class Kata {
 
 	public static int squareSum3(int[] xs) {
 		return Arrays.stream(xs).reduce(0, (acc, number) -> acc + number * number);
+	}
+
+	public static String getMiddle(String word) {
+		char[] letter = word.toCharArray();
+		int length = letter.length;
+
+		if (length == 1) {
+			return "" + letter[0];
+		}
+
+		if (length % 2 == 0) {
+			return letter[(length / 2) - 1] + "" + letter[(length / 2 + 1) - 1];
+		}
+
+		return "" + letter[length / 2];
 	}
 
 }

@@ -1,9 +1,10 @@
 package exercises;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Teste {
 
@@ -105,6 +106,10 @@ public class Teste {
 		System.out.println(firstName.concat(lastName));
 		System.out.println("other");
 		System.out.println(DigPow.digPow(33, 2));
+		
+		System.out.println(Kata.getMiddle("test"));
+		
+
 
 	}
 
