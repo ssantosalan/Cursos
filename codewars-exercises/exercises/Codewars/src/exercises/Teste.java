@@ -2,7 +2,7 @@ package exercises;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -106,10 +106,12 @@ public class Teste {
 		System.out.println(firstName.concat(lastName));
 		System.out.println("other");
 		System.out.println(DigPow.digPow(33, 2));
-		
-		System.out.println(Kata.getMiddle("test"));
-		
 
+		System.out.println(Kata.getMiddle("test"));
+		System.out.println(DescendingOrder.sortDesc(12345));
+
+		String nome5 = String.join(", ", "Alan", "Santos");
+		System.out.println(nome5);
 
 	}
 
