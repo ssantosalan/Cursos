@@ -1,7 +1,9 @@
 package exercises;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Stream;
+import java.util.Collections;
+import java.util.List;
 
 public class Kata {
 	public static int[] invert(int[] array) {
@@ -92,6 +94,41 @@ public class Kata {
 		}
 
 		return "" + letter[length / 2];
+	}
+
+	public static int opposite(int number) {
+		return -number;
+	}
+
+	public static int[] sortArray(int[] array) {
+		List<Integer> oddNumbers = new ArrayList<>();
+		List<Integer> leftovers = new ArrayList<>();
+		List<Integer> list = new ArrayList<>();
+
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] % 2 == 0) {
+				leftovers.add(array[i]);
+			} else {
+				oddNumbers.add(array[i]);
+			}
+
+		}
+
+		Collections.sort(oddNumbers);
+
+		for (int i = 0; i < oddNumbers.size(); i++) {
+			list.add(oddNumbers.get(i));
+		}
+
+		for (int i = 0; i < leftovers.size(); i++) {
+			list.add(leftovers.get(i));
+		}
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = list.get(i);
+		}
+
+		return array;
 	}
 
 }
