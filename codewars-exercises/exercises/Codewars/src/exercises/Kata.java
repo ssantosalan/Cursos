@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.PrimitiveIterator.OfInt;
+import java.util.stream.IntStream;
 
 public class Kata {
 	public static int[] invert(int[] array) {
@@ -102,6 +104,32 @@ public class Kata {
 
 	public static int[] sortArray(int[] array) {
 		List<Integer> oddNumbers = new ArrayList<>();
+
+		for (int i = 0; i < array.length; i++) {
+
+			if (array[i] % 2 == 1) {
+				oddNumbers.add(array[i]);
+			}
+
+		}
+		Collections.sort(oddNumbers);
+
+		int count = 0;
+
+		for (int i = 0; i < array.length; i++) {
+
+			if (array[i] % 2 == 1) {
+				array[i] = oddNumbers.get(count);
+				count++;
+			}
+
+		}
+
+		return array;
+	}
+
+	public static int[] sortArray2(int[] array) {
+		List<Integer> oddNumbers = new ArrayList<>();
 		List<Integer> leftovers = new ArrayList<>();
 		List<Integer> list = new ArrayList<>();
 
@@ -129,6 +157,26 @@ public class Kata {
 		}
 
 		return array;
+	}
+
+	public static int[] sortArray3(final int[] array) {
+
+		// Sort the odd numbers only
+		final int[] sortedOdd = Arrays.stream(array).filter(e -> e % 2 == 1).sorted().toArray();
+
+		// Then merge them back into original array
+		for (int j = 0, s = 0; j < array.length; j++) {
+			if (array[j] % 2 == 1)
+				array[j] = sortedOdd[s++];
+		}
+
+		return array;
+	}
+
+	public static int[] sortArray4(int[] array) {
+		OfInt sortedOdds = IntStream.of(array).filter(i -> i % 2 == 1).sorted().iterator();
+
+		return IntStream.of(array).map(i -> i % 2 == 0 ? i : sortedOdds.nextInt()).toArray();
 	}
 
 }
