@@ -179,4 +179,8 @@ public class Kata {
 		return IntStream.of(array).map(i -> i % 2 == 0 ? i : sortedOdds.nextInt()).toArray();
 	}
 
+	public static String numberToString(int num) {
+		return String.valueOf(num);
+	}
+
 }
