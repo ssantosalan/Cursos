@@ -1,14 +1,14 @@
 package exercises;
 
+import java.util.Arrays;
+
 public class Teste {
 
 	public static void main(String[] args) {
 
-		String myStr = "Helloa my hello";
-		String[] array = {"1", "2"};
-		System.out.println(Troll.disemvowel(myStr));
-		
-		
+		double[] array = { 1.4, 5, 3 };
+
+		System.out.println(Arrays.stream(array).sum());
 	}
 
 }

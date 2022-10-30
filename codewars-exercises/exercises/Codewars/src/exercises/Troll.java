@@ -29,4 +29,10 @@ public class Troll {
 		return str.replaceAll("[aAeEiIoOuU]", "");
 	}
 
+	public static String disemvowel4(String str) {
+
+		return str.replaceAll("(?i)[^aeiou]", "");
+
+	}
+
 }
