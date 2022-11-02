@@ -1,9 +1,6 @@
 package exercises;
 
 import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class Solution {
 
@@ -104,6 +101,30 @@ public class Solution {
 		default:
 			return String.format("%s, %s and %d others like this", names[0], names[1], names.length - 2);
 		}
+	}
+
+	static int stray(int[] numbers) {
+		Arrays.sort(numbers);
+		System.out.println(Arrays.toString(numbers));
+		int length = numbers.length;
+
+		if (numbers[0] != numbers[1]) {
+			return numbers[0];
+		}
+
+		if (numbers[length - 1] != numbers[length - 2]) {
+			return numbers[length - 1];
+		}
+
+		for (int i = 0; i < numbers.length; i++) {
+
+			if (numbers[i] != numbers[i + 1]) {
+				return numbers[i + 1];
+			}
+
+		}
+
+		return 0;
 	}
 
 }
