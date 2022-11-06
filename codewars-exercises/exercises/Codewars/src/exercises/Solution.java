@@ -1,6 +1,8 @@
 package exercises;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Solution {
 
@@ -125,6 +127,18 @@ public class Solution {
 		}
 
 		return 0;
+	}
+
+	public static String camelCase(String input) {
+		if (input.equals("")) {
+			return "";
+		}
+
+		return Stream.of(input.split("")).map(e -> e == e.toUpperCase() ? " " + e : e).collect(Collectors.joining(""));
+	}
+
+	public static String camelCase2(String input) {
+		return input.replaceAll("([A-Z])", " $1");
 	}
 
 }
