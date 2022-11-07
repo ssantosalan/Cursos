@@ -134,11 +134,12 @@ public class Solution {
 			return "";
 		}
 
-		return Stream.of(input.split("")).map(e -> e == e.toUpperCase() ? " " + e : e).collect(Collectors.joining(""));
+		return Stream.of(input.split("")).map(e -> e == e.toUpperCase() ? " " + e : e).collect(Collectors.joining(""))
+				.trim();
 	}
 
 	public static String camelCase2(String input) {
-		return input.replaceAll("([A-Z])", " $1");
+		return input.replaceAll("([A-Z])", " $1").trim();
 	}
 
 }
