@@ -1,16 +1,15 @@
 package exercises;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Teste {
 
 	public static void main(String[] args) {
 
-		System.out.println(Solution.camelCase(""));
-		System.out.println(Solution.camelCase("AlanSilvaDosSantos"));
-		System.out.println(Solution.camelCase2(""));
-		System.out.println(Solution.camelCase2("AlanSilvaDosSantos"));
+		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
 
+		numbers.stream().reduce(0, (a, b) -> a + b);
 	}
 
 }
