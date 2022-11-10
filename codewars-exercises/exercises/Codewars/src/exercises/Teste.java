@@ -1,15 +1,19 @@
 package exercises;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Teste {
 
 	public static void main(String[] args) {
 
-		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+		Integer[] array = { 1, 2, 3 };
 
-		numbers.stream().reduce(0, (a, b) -> a + b);
+		Arrays.sort(array, Comparator.reverseOrder());
+		Arrays.sort(array, Collections.reverseOrder());
+		System.out.println(Arrays.toString(array));
 	}
 
 }
