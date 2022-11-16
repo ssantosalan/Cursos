@@ -9,10 +9,9 @@ public class Teste {
 
 	public static void main(String[] args) {
 
+		String word = "word";
 
-		var list = List.of("a", "b", "c");
-		
-		System.out.println(list);
+		System.out.println(Kata.solution(word));
 	}
 
 }

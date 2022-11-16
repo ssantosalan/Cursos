@@ -273,4 +273,20 @@ public class Kata {
 		return "Hello, " + name + " how are you doing today?";
 	}
 
+	public static String solution(String str) {
+		String[] array = str.split("");
+		StringBuilder sb = new StringBuilder();
+		for (int i = array.length - 1; i >= 0; i--) {
+			sb.append(array[i]);
+		}
+		return sb.toString();
+	}
+
+	public static String solution2(String str) {
+		return new StringBuffer(str).reverse().toString();
+	}
+	
+	public static String solution3(String str) {
+		return new StringBuilder(str).reverse().toString();
+	}
 }
