@@ -285,8 +285,13 @@ public class Kata {
 	public static String solution2(String str) {
 		return new StringBuffer(str).reverse().toString();
 	}
-	
+
 	public static String solution3(String str) {
 		return new StringBuilder(str).reverse().toString();
 	}
+
+	public static boolean checkForFactor(int base, int factor) {
+		return base % factor == 0;
+	}
+
 }

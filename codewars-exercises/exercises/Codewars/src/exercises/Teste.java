@@ -1,9 +1,7 @@
 package exercises;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.stream.Stream;
 
 public class Teste {
 
@@ -12,6 +10,11 @@ public class Teste {
 		String word = "word";
 
 		System.out.println(Kata.solution(word));
+
+		int[] array = { 3, 2, 1 };
+
+		Arrays.stream(array).map(i -> i * 2).toArray();
+
 	}
 
 }
