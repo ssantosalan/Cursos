@@ -7,9 +7,9 @@ public class Teste {
 
 	public static void main(String[] args) {
 
+		System.out.println(RemoveChars.remove("Alan"));
+		System.out.println(RemoveChars.remove("eloquentte"));
 		
-		
-		System.out.println(Arrays.toString(Kata.powersOfTwo(1)));
 		
 	}
 
