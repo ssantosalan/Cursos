@@ -305,4 +305,16 @@ public class Kata {
 		return array;
 	}
 
+	public static boolean isAnagram(String test, String original) {
+		String[] arrayTest = test.toLowerCase().split("");
+		String[] arrayOriginal = original.toLowerCase().split("");
+		Arrays.sort(arrayTest);
+		Arrays.sort(arrayOriginal);
+
+		test = String.join("", arrayTest);
+		original = String.join("", arrayOriginal);
+
+		return test.equals(original);
+	}
+
 }
