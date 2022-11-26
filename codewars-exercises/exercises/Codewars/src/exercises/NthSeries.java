@@ -5,22 +5,11 @@ public class NthSeries {
 //	String strDouble = String.format("%.2f", 1.23456);
 
 	public static String seriesSum(int n) {
-		if (n == 0) {
-			return "0.00";
+		double sum = 0;
+		for (int i = 0; i < n; i++) {
+			sum += 1 / (1 + i * 3.0);
 		}
-
-		if (n == 1) {
-			return "1.00";
-		}
-
-		double sum = 0.0;
-		double number = 1.0;
-		
-		for (int i = 1; i < n; i++) {
-			sum = sum + (1.0 / (number + 3.0));
-	
-		}
-		sum += 1.0;
+		System.out.println(sum);
 		return String.format("%.2f", sum);
 	}
 }
