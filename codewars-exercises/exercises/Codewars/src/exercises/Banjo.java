@@ -6,6 +6,7 @@ public class Banjo {
 		if (name.toLowerCase().startsWith("r")) {
 			return name = name + " plays banjo";
 		}
+//exercício 
 		return name = name + " does not play banjo";
 	}
 }
