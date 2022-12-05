@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.PrimitiveIterator.OfInt;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Kata {
 	public static int[] invert(int[] array) {
@@ -323,6 +325,14 @@ public class Kata {
 
 	public static int square(int n) {
 		return n * n;
+	}
+
+	public static String reverseWords(final String original) {
+		if (Stream.of(original.split(" ")).count() == 0) {
+			return original;
+		}
+
+		return Stream.of(original.split(" ")).map(i -> new StringBuilder(i).reverse()).collect(Collectors.joining(" "));
 	}
 
 }
