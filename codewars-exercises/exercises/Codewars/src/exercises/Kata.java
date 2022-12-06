@@ -335,4 +335,8 @@ public class Kata {
 		return Stream.of(original.split(" ")).map(i -> new StringBuilder(i).reverse()).collect(Collectors.joining(" "));
 	}
 
+	public static int hexToDec(final String hexString) {
+		return Integer.parseInt(hexString, 16);
+	}
+
 }
