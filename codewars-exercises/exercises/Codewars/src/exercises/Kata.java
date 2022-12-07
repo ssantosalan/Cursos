@@ -339,4 +339,8 @@ public class Kata {
 		return Integer.parseInt(hexString, 16);
 	}
 
+	public static String mouthSize(String animal) {
+		return animal.toLowerCase().equals("alligator") ? "small" : "wide";
+	}
+
 }
