@@ -142,4 +142,8 @@ public class Solution {
 		return input.replaceAll("([A-Z])", " $1").trim();
 	}
 
+	public static String doubleChar(String s) {
+		return Stream.of(s.split("")).map(i -> i + i).collect(Collectors.joining(""));
+	}
+
 }
