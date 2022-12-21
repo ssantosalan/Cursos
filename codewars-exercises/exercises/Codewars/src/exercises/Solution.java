@@ -184,4 +184,8 @@ public class Solution {
 	// 	return pin.length() == 4 || pin.length() == 6;
 	// }
 
+	// public static boolean check(Object[] a, Object x) {
+	// 	return Arrays.asList(a).contains(x);
+	// }
+
 }
