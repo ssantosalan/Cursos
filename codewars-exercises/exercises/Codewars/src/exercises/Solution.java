@@ -167,6 +167,10 @@ public class Solution {
 		return string;
 	}
 
+	// public static String camelCase2(String input) {
+	// 	return input.replaceAll("([A-Z])", " $1").trim();
+	// }
+
 	// public static boolean validatePin(String pin) {
 
 	// 	if (pin.matches("^(?=([\\D]?\\d){10,13}$)(?!.*--)(?!\\+-)\\+?[-0-9]*")) {
