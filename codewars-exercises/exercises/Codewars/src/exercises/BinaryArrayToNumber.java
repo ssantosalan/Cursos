@@ -17,4 +17,7 @@ public class BinaryArrayToNumber {
 	public static int ConvertBinaryArrayToInt2(List<Integer> binary) {
 		return binary.stream().reduce((x, y) -> x * 2 + y).get();
 	}
+	// public static int ConvertBinaryArrayToInt2(List<Integer> binary) {
+	// 	return binary.stream().reduce((x, y) -> x * 2 + y).get();
+	// }
 }
