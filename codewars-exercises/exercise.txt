@@ -1,2 +1,2 @@
-novo exercício
+exercício 00
 exercício vetor codewars 
