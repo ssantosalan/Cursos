@@ -1,3 +1,4 @@
 exercício 00
 exercicio 01
+exercicio 02
 exercício vetor codewars 
