@@ -34,3 +34,15 @@ public class Sum {
 
 	}
 }
+
+// public static int sum(int[] numbers) {
+
+// 	if (numbers == null || numbers.length < 2) {
+// 		return 0;
+// 	}
+
+// 	int result = Arrays.stream(numbers).sum();
+// 	result = result - Arrays.stream(numbers).min().getAsInt();
+// 	result = result - Arrays.stream(numbers).max().getAsInt();
+// 	return result;
+
