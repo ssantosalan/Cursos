@@ -49,6 +49,14 @@ public class Solution {
 		return pin.length() == 4 || pin.length() == 6;
 	}
 
+	// 	public static String repeatStr(final int repeat, final String string) {
+	// 	String s = "";
+	// 	for (int i = 0; i < repeat; i++) {
+	// 		s = s.concat(string);
+	// 	}
+	// 	return s;
+	// }
+
 	public static boolean validatePin2(String pin) {
 		if (pin.length() != 4 || pin.length() != 6)
 			return false;
