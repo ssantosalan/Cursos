@@ -14,3 +14,7 @@ public class TwiceAsOld {
 		return  Math.abs(dadYears - ((dadYears - sonYears) * 2));
 	}
 }
+
+// public static int TwiceAsOld(int dadYears, int sonYears) {
+// 	return  Math.abs(dadYears - ((dadYears - sonYears) * 2));
+// }
