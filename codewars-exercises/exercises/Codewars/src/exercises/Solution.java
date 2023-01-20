@@ -71,6 +71,10 @@ public class Solution {
 
 	}
 
+	// public static boolean check(Object[] a, Object x) {
+	// 	return Arrays.asList(a).contains(x);
+	// }
+
 	public static String whoLikesIt(String... names) {
 		if (names.length == 0) {
 			return "no one likes this";
