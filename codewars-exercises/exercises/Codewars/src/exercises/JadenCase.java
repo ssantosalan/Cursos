@@ -44,18 +44,4 @@ public class JadenCase {
 	                   .collect(Collectors.joining(" "));
 	  }
 
-	//   public String toJadenCase(String phrase) {
-
-	// 	if (phrase == null || phrase == "") {
-	// 		return null;
-	// 	}
-
-	// 	String[] vetor = phrase.split(" ");
-	// 	String capitalizedPhrase = "";
-	// 	for (int i = 0; i < vetor.length; i++) {
-	// 		capitalizedPhrase += vetor[i].substring(0, 1).toUpperCase() + vetor[i].substring(1) + " ";
-	// 	}
-	// 	return capitalizedPhrase.trim();
-	// }
-
 }

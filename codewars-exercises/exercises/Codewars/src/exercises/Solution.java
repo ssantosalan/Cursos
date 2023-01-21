@@ -49,14 +49,6 @@ public class Solution {
 		return pin.length() == 4 || pin.length() == 6;
 	}
 
-	// 	public static String repeatStr(final int repeat, final String string) {
-	// 	String s = "";
-	// 	for (int i = 0; i < repeat; i++) {
-	// 		s = s.concat(string);
-	// 	}
-	// 	return s;
-	// }
-
 	public static boolean validatePin2(String pin) {
 		if (pin.length() != 4 || pin.length() != 6)
 			return false;
@@ -70,10 +62,6 @@ public class Solution {
 		return true;
 
 	}
-
-	// public static boolean check(Object[] a, Object x) {
-	// 	return Arrays.asList(a).contains(x);
-	// }
 
 	public static String whoLikesIt(String... names) {
 		if (names.length == 0) {
@@ -117,20 +105,6 @@ public class Solution {
 		}
 	}
 
-	// public static boolean validatePin2(String pin) {
-	// 	if (pin.length() != 4 || pin.length() != 6)
-	// 		return false;
-
-	// 	for (int i = 0; i < pin.length(); i++) {
-	// 		if (!Character.isDigit(pin.charAt(i))) {
-	// 			return false;
-	// 		}
-	// 	}
-
-	// 	return true;
-
-	// }
-
 	static int stray(int[] numbers) {
 		Arrays.sort(numbers);
 		System.out.println(Arrays.toString(numbers));
@@ -164,21 +138,6 @@ public class Solution {
 				.trim();
 	}
 
-	// public static String whoLikesIt2(String... names) {
-	// 	switch (names.length) {
-	// 	case 0:
-	// 		return "no one likes this";
-	// 	case 1:
-	// 		return String.format("%s likes this", names[0]);
-	// 	case 2:
-	// 		return String.format("%s and %s like this", names[0], names[1]);
-	// 	case 3:
-	// 		return String.format("%s, %s and %s like this", names[0], names[1], names[2]);
-	// 	default:
-	// 		return String.format("%s, %s and %d others like this", names[0], names[1], names.length - 2);
-	// 	}
-	// }
-
 	public static String camelCase2(String input) {
 		return input.replaceAll("([A-Z])", " $1").trim();
 	}
@@ -194,56 +153,4 @@ public class Solution {
 		return string;
 	}
 
-	// public static String camelCase2(String input) {
-	// 	return input.replaceAll("([A-Z])", " $1").trim();
-	// }
-
-	// public static boolean validatePin(String pin) {
-
-	// 	if (pin.matches("^(?=([\\D]?\\d){10,13}$)(?!.*--)(?!\\+-)\\+?[-0-9]*")) {
-	// 		return false;
-	// 	}
-
-	// 	for (int i = 0; i < pin.length(); i++) {
-
-	// 		if (Character.isLetter(pin.charAt(i))) {
-	// 			return false;
-	// 		}
-
-	// 		if (Character.isAlphabetic(pin.charAt(i))) {
-	// 			return false;
-	// 		}
-
-	// 		if (Character.isDigit(i)) {
-	// 			return false; // --
-	// 		}
-
-	// 		if (pin.charAt(i) == '$' || pin.charAt(i) == '*' || pin.charAt(i) == ' ' || pin.charAt(i) == '\"'
-	// 				|| pin.charAt(i) == '!' || pin.charAt(i) == ',' || pin.charAt(i) == ';' || pin.charAt(i) == '.'
-	// 				|| pin.charAt(i) == '?' || pin.charAt(i) == '-' || pin.charAt(i) == '\'' || pin.charAt(i) == '\"'
-	// 				|| pin.charAt(i) == ':') {
-	// 			return false;
-	// 		}
-	// 	}
-
-	// 	return pin.length() == 4 || pin.length() == 6;
-	// }
-
-	// public static boolean check(Object[] a, Object x) {
-	// 	return Arrays.asList(a).contains(x);
-	// }
-	// public static String whoLikesIt2(String... names) {
-	// 	switch (names.length) {
-	// 	case 0:
-	// 		return "no one likes this";
-	// 	case 1:
-	// 		return String.format("%s likes this", names[0]);
-	// 	case 2:
-	// 		return String.format("%s and %s like this", names[0], names[1]);
-	// 	case 3:
-	// 		return String.format("%s, %s and %s like this", names[0], names[1], names[2]);
-	// 	default:
-	// 		return String.format("%s, %s and %d others like this", names[0], names[1], names.length - 2);
-	// 	}
-	// }
 }

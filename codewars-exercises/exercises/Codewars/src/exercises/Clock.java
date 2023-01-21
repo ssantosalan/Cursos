@@ -5,15 +5,4 @@ public class Clock {
 	return 5;
 	
 	}
-	// public static int Past(int h, int m, int s) {
-	// 	return 6;
-		
-	// 	}
 }
-
-// public class Clock {
-// 	public static int Past(int h, int m, int s) {
-// 	return 5;
-	
-// 	}
-// }
