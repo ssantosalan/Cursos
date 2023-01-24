@@ -25,6 +25,10 @@ public class DescendingOrder {
 				.sorted(Comparator.reverseOrder()).collect(Collectors.joining()));
 	}
 
+	// public static int strCount(String str, char letter) {
+	// 	return str.replaceAll("[^"+letter+"]", "").length();
+	// }
+
 	public static int sortDesc3(final int num) {
 		String[] array = String.valueOf(num).split("");
 		Arrays.sort(array, Collections.reverseOrder());
