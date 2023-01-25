@@ -8,6 +8,9 @@ public class Counter {
 			if (sheep != null && sheep) {
 				numberOfSheeps++;
 			}
+			// if (sheep == null && sheep) {
+			// 	numberOfSheeps++;
+			// }
 		}
 		return numberOfSheeps;
 	}
