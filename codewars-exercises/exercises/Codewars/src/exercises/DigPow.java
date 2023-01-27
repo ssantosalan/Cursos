@@ -15,6 +15,7 @@ public class DigPow {
 			numeros[i] = Character.getNumericValue(digitos[i]);
 			numeros[i] = (long) Math.pow(numeros[i], p + i);
 		}
+		
 		System.out.println(Arrays.toString(numeros));
 
 		long sum = LongStream.of(numeros).sum();
@@ -31,6 +32,10 @@ public class DigPow {
 
 		return -1;
 	}
+
+	// public static int strCount(String str, char letter) {
+	// 	return str.replaceAll("[^"+letter+"]", "").length();
+	// }
 
 	public static long digPow2(int n, int p) {
 		String intString = String.valueOf(n);
