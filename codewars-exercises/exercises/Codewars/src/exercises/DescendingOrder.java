@@ -29,6 +29,9 @@ public class DescendingOrder {
 	// 	return str.replaceAll("[^"+letter+"]", "").length();
 	// }
 
+	// char[] ch = String.valueOf(num).toCharArray();
+	// 	Integer[] arrayDesc = new Integer[ch.length];
+
 	public static int sortDesc3(final int num) {
 		String[] array = String.valueOf(num).split("");
 		Arrays.sort(array, Collections.reverseOrder());
