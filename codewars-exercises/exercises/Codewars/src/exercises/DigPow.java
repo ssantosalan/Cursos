@@ -7,6 +7,7 @@ public class DigPow {
 	public static long digPow(int n, int p) {
 		// your code
 		// p cada digito, elevar com p + 1;
+		// long sum = LongStream.of(numeros).sum();
 		String number = String.valueOf(n);
 		char[] digitos = number.toCharArray();
 		long[] numeros = new long[digitos.length];
