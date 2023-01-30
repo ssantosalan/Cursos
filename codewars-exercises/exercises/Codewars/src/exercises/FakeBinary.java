@@ -8,4 +8,8 @@ public class FakeBinary {
 		return Stream.of(numberString.split("")).map(i -> Integer.parseInt(i) < 5 ? "0" : "1")
 				.collect(Collectors.joining(""));
 	}
+	// public static String fakeBin(String numberString) {
+	// 	return Stream.of(numberString.split("")).map(i -> Integer.parseInt(i) < 5 ? "0" : "1")
+	// 			.collect(Collectors.joining(""));
+	// }
 }
