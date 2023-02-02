@@ -8,6 +8,7 @@ public class JadenCase {
 
 		if (phrase == null || phrase == "") {
 			return null;
+			// return;
 		}
 
 		String[] vetor = phrase.split(" ");
