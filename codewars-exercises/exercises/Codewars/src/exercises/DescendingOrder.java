@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 public class DescendingOrder {
 	public static int sortDesc(final int num) {
 		char[] ch = String.valueOf(num).toCharArray();
+		// char[] ch = String.valueOf(num);
 		Integer[] arrayDesc = new Integer[ch.length];
 
 		for (int i = 0; i < ch.length; i++) {
