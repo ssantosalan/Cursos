@@ -6,7 +6,7 @@ public class MixedSum {
 	public int sum(List<?> mixed) {
 
 		int soma = 0;
-		// int number = 1;
+		// int number = 2;
 		for (int i = 0; i < mixed.size(); i++) {
 
 			if (mixed.get(i) instanceof String) {
