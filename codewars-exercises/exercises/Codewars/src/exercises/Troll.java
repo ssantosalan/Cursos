@@ -6,6 +6,7 @@ public class Troll {
 	public static String disemvowel(String str) {
 
 		String[] arrayString = str.split("");
+		// String = String = str;
 
 		for (int i = 0; i < arrayString.length; i++) {
 			if (arrayString[i].toLowerCase().equals("a") || arrayString[i].toLowerCase().equals("e")
