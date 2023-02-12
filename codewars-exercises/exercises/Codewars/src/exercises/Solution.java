@@ -36,6 +36,7 @@ public class Solution {
 
 			if (Character.isDigit(i)) {
 				return false; // --
+				// return true; // --
 			}
 
 			if (pin.charAt(i) == '$' || pin.charAt(i) == '*' || pin.charAt(i) == ' ' || pin.charAt(i) == '\"'
