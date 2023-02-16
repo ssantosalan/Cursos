@@ -1,0 +1,41 @@
+trigger AccountTrigger on Account(before insert, before delete, after insert, after undelete, after update ){
+
+    if (Trigger.isDelete){
+        AccountBO.getInstance().criarCasoAoDeletarConta(Trigger.old);
+        AccountBO.getInstance().deletarFicharioDeContaDeletada(Trigger.old);
+
+    }
+
+    if (Trigger.isUndelete){
+        AccountBO.getInstance().recuperarContaECriarCaso(Trigger.new);
+    }
+
+    if (Trigger.isInsert && Trigger.isBefore){
+        AccountBO.getInstance().preencherTipo(Trigger.new );
+    }
+
+    if (Trigger.isInsert && Trigger.isAfter){
+        // AccountBO.getInstance().criarOportunidade(Trigger.new );
+        AccountBO.getInstance().criarContatoOportunidadeDeContaNova(Trigger.new );
+        AccountBO.getInstance().criarFicharioDeContaNova(Trigger.new );
+    }
+
+    if (Trigger.isUpdate && Trigger.isAfter){
+        AccountBO.getInstance().atualizarQuantidadeFilialMatriz(Trigger.new);
+        AccountBO.getInstance().tratarOportunidade(Trigger.new );
+    }
+
+    // if (Trigger.isInsert && Trigger.isAfter){
+    //     AccountBO.getInstance().criarOportunidade(Trigger.new );
+    // }
+    // if (Trigger.isInsert && Trigger.isBefore){
+    //     AccountBO.getInstance().preencherTipo(Trigger.new );
+    // }
+    // if (Trigger.isUpdate && Trigger.isAfter){
+    //     AccountBO.getInstance().tratarOportunidade(Trigger.new );
+    // }
+    //--
+    // if (Trigger.isAfter){
+    //     AccountBO.getInstance().atualizarOportunidadesConta(Trigger.new, Trigger.oldMap);
+    // }
+}
