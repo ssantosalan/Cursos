@@ -310,6 +310,59 @@ public class AccountBO{
     //                      WHERE ParentId IN:setIdContas];
     // }
     // trigger.new, trigger.oldMap
+    public void atualizarDescricaoContaCriar(List<Account> contas){
+        Set<Account> contasProcessar = new Set<account>();
 
+        if (contas.isEmpty()){
+            return;
+        }
+
+        for (Account conta : contas){
+            if (conta.Description == null){
+                conta.Description = 'Descrição Teste Função atualizarDescricaoContaCriar';
+            }
+        }
+    }
+
+    // - Criar um método que deverá preencher o campo última oportunidade na conta.
+    // - Você deverá atualizar o método futuro criado para atender tanto o primeiro método criado quanto o segundo agora gerado.
+    // Observação: Será necessário criar o campo Última Oportunidade no objeto Account para resolver esse problema. No final teremos dois métodos utilizando um único método @future
+    // public void atualizarUltimaOportunidadeConta(List<Account> contasLista){
+    //     List<Account> contasProcessar = new List<Account>();
+    //     Set<Id> idContaSet = new Set<Id>();
+    //     List<Opportunity> oportunidadeLista = new List<Opportunity>();
+    //     List<Opportunity> oportunidadeLista2 = new List<Opportunity>();
+    //     if (contasLista.isEmpty()){
+    //         return;
+    //     }
+    //     for (Account conta : contasLista){
+    //         idContaSet.add(conta.Id);
+    //     }
+    //     oportunidadeLista = [SELECT id, AccountId, Name
+    //                          FROM Opportunity
+    //                          WHERE AccountID IN:idContaSet
+    //                          ORDER BY CreatedDate desc
+    //                          limit 1];
+    //     System.debug('AQUII >>>>>>> ' + oportunidadeLista);
+    //     // para cada conta, eu quero associar a opportunity que tem o mesmo Accound ID
+    //     for (Opportunity oportunidade : oportunidadeLista){
+    //         conta.UltimaOportunidade__c =
+    //     }
+    // }
+    public void atualizarUltimaOportunidade(List<Account> contas) {
+        List<Opportunity> oportunidades = [SELECT AccountId, CloseDate FROM Opportunity WHERE AccountId IN :contas ORDER BY CloseDate DESC];
+        Map<Id, Id> ultimasOportunidades = new Map<Id, Id>();
+        for (Opportunity oportunidade : oportunidades) {
+            ultimasOportunidades.put(oportunidade.AccountId, oportunidade.AccountId);
+        }
+        for (Account conta : contas) {
+            if (ultimasOportunidades.containsKey(conta.Id)) {
+                conta.UltimaOportunidade__c = ultimasOportunidades.get(conta.Id);
+            }
+        }
+        System.debug('CHEGOU AQUI AccountBO >> atualizarUltimaOportunidade >>ultimasOportunidades' + ultimasOportunidades);
+        update contas;
+    }
     
+
 }
