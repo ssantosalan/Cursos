@@ -19,19 +19,16 @@ public with sharing class OpportunityBO{
 
     @Future
     public static void passarContatoContaParaOportunidade(Set<Id> contasIdSet){
+        List<Contact> contatosContaFiltrada = [SELECT Id, Name
+                                               FROM Contact
+                                               WHERE AccountId IN:contasIdSet];
+                                               
+        List<Opportunity> oportunidadeContaFiltrada = [SELECT Id, Name
+                                                       FROM Opportunity
+                                                       WHERE AccountId IN:contasIdSet];
+
+        //Processar contatos
         List<OpportunityContactRole> contatosProcessar = new List<OpportunityContactRole>();
-
-        List<Contact> contatosContaFiltrada = new List<Contact>();
-        List<Opportunity> oportunidadeContaFiltrada = new List<Opportunity>();
-        contatosContaFiltrada = [SELECT Id, Name
-                                 FROM Contact
-                                 WHERE AccountId IN:contasIdSet];
-
-        oportunidadeContaFiltrada = [SELECT Id, Name
-                                     FROM Opportunity
-                                     WHERE AccountId IN:contasIdSet];
-
-
         for (Opportunity oportunidade : oportunidadeContaFiltrada){
             for (Contact contato : contatosContaFiltrada){
                 OpportunityContactRole opportunityContactRole = new OpportunityContactRole(ContactId = contato.Id, OpportunityId = oportunidade.Id);
@@ -44,39 +41,42 @@ public with sharing class OpportunityBO{
     }
 
     public void atualizarUltimaOportunidadeFinal(List<Opportunity> oportunidadesLista){
-        List<Account> contasProcessar = new List<Account>();
-        List<Opportunity> ultimaOportunidadeCriadaLista = new List<Opportunity>();
-
         if (oportunidadesLista.isEmpty()){
             return;
         }
 
+        // Obter IDs exclusivos das contas das oportunidades
         Set<Id> contaIdsSet = new Set<Id>();
         for (Opportunity oportunidade : oportunidadesLista){
             contaIdsSet.add(oportunidade.AccountId);
         }
 
-        ultimaOportunidadeCriadaLista = [SELECT AccountId
-                                         FROM Opportunity
-                                         WHERE AccountId IN:contaIdsSet
-                                         ORDER BY CreatedDate DESC];
+        List<Opportunity> ultimaOportunidadeCriadaLista = [SELECT AccountId
+                                                           FROM Opportunity
+                                                           WHERE AccountId IN:contaIdsSet
+                                                           ORDER BY CreatedDate DESC];
 
-        Map<Id, Id> ultimasOportunidadesSet = new Map<Id, Id>();
+        // Obter as últimas oportunidades de cada conta
+        Map<Id, Id> ultimasOportunidadesMap = new Map<Id, Id>();
         for (Opportunity oportunidade : ultimaOportunidadeCriadaLista){
-            if (!ultimasOportunidadesSet.containsKey(oportunidade.AccountId)){
-                ultimasOportunidadesSet.put(oportunidade.AccountId, oportunidade.Id);
+            if (!ultimasOportunidadesMap.containsKey(oportunidade.AccountId)){
+                ultimasOportunidadesMap.put(oportunidade.AccountId, oportunidade.Id);
             }
         }
 
+        // Atualizar as contas que contêm as últimas oportunidades
+        List<Account> contasProcessar = new List<Account>();
         for (Opportunity oportunidade : oportunidadesLista){
-            if (ultimasOportunidadesSet.containsKey(oportunidade.AccountId)){
-                Id accountIdUltimaOportunidade = ultimasOportunidadesSet.get(oportunidade.AccountId);
-                Account conta = new Account(Id = oportunidade.AccountId, UltimaOportunidade__c = accountIdUltimaOportunidade);
+            Id ultimaOportunidadeId = ultimasOportunidadesMap.get(oportunidade.AccountId);
+            if (ultimaOportunidadeId != null){
+                Account conta = new Account(Id = oportunidade.AccountId, UltimaOportunidade__c = ultimaOportunidadeId);
                 contasProcessar.add(conta);
             }
         }
 
-        update contasProcessar;
+        if (!contasProcessar.isEmpty()){
+            update contasProcessar;
+        }
     }
 
     // Set<Id> accountIdOportunidadeSet = new Set<Id>();

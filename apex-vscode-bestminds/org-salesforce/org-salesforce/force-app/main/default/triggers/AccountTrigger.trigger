@@ -28,6 +28,7 @@ trigger AccountTrigger on Account (before insert, before delete, after insert, a
     }
 
     if (Trigger.isUpdate && Trigger.isAfter){
+        AccountBO.getInstance().atualizarEnderecosContatos(Trigger.new);
         // AccountBO.getInstance().atualizarQuantidadeFilialMatriz(Trigger.new);
         AccountBO.getInstance().tratarOportunidade(Trigger.new );
         // AccountBO.getInstance().atualizarUltimaOportunidadeConta(Trigger.new);
