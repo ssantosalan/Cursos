@@ -2,19 +2,13 @@ public with sharing class PrimeiroBatch implements Database.Batchable<sObject>{
     // Atualizar endereço de contato
     public Database.QueryLocator start(Database.BatchableContext bc){
         // Receber lista de Contatos.
-        return Database.getQueryLocator([SELECT Id, AccountId FROM Contact]); 
+        return Database.getQueryLocator([SELECT Id
+                                         FROM Account]);
     }
 
-    public void execute(Database.BatchableContext bc, List<SObject> scope){
+    public void execute(Database.BatchableContext bc, List<Account> contasLista){
         // Processa cada lote de registros retornado pelo QueryLocator.
-        CaseBO.preencherEnderecoContato(casoList);
-        for (SObject record : scope){
-            // Lógica de processamento aqui.
-            System.debug('Nome da conta: ' + record.get('Name'));
-        }
-
-
-
+        AccountBO.getInstance().atualizarEnderecosDeContaEContato(contasLista);
     }
 
     public void finish(Database.BatchableContext bc){
@@ -22,6 +16,3 @@ public with sharing class PrimeiroBatch implements Database.Batchable<sObject>{
     }
 
 }
-
-// MeuBatch batch = new MeuBatch();
-// Database.executeBatch(batch);

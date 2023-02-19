@@ -367,129 +367,37 @@ public class AccountBO{
         update contas;
     }
 
-    public void preencherEnderecoContato(List<Account> contaLista){
-        if (contaLista.isEmpty()){
-            return;
-        }
+    public void atualizarEnderecosDeContaEContato(List<Account> contas){
+        List<Account> contasParaAtualizar = new List<Account>();
+        List<Contact> contatosParaAtualizar = new List<Contact>();
 
-        //Obter IDs únicas da conta
+        //Pega IDs exclusivos das contas
         Set<Id> contaIdSet = new Set<Id>();
-        for (Account conta : contaLista){
+        for (Account conta : contas){
             contaIdSet.add(conta.Id);
         }
+        //Pega os contatos da contatos
+        List<Contact> contatosLista = [SELECT Id, AccountId
+                                       FROM Contact
+                                       WHERE AccountId IN:contaIdSet];
 
-        //Obter lista de contatos
-        List<Contact> contatoLista = [SELECT Id, AccountId
-                                      FROM Contact
-                                      WHERE AccountId IN:contaIdSet];
-
-
-        //Obter mapa de chave contatoId para valor contaId.
-        Map<Id, Id> contaIdMap = new Map<Id, Id>();
-        for (Contact contato : contatoLista){
-            if (contato.AccountId != null && !contaIdMap.containsKey(contato.Id)){
-                contaIdMap.put(contato.Id, contato.AccountId);
-            }
-        }
-        System.debug('DEBUG >>> contaIdMap >>> ' + contaIdMap);
-
-        //Processar contato
-        List<Contact> contatoProcessar = new List<Contact>();
-        for (Account contato : contatoLista){
-            Id idConta = contaIdMap.get(contato.Id);
-            if (idConta != null){
-                Contact contato = new Contact(AccountId = idConta);
-                contato.MailingStreet = conta.BillingStreet;
-                contato.MailingCity = conta.BillingCity;
-                contato.MailingState = conta.BillingState;
-                contato.MailingPostalCode = conta.BillingPostalCode;
-                contato.MailingCountry = conta.BillingCountry;
-                contatoProcessar.add(contato);
-            }
-        }
-
-        System.debug('DEBUG >>> contatoProcessar >>> ' + contatoProcessar);
-        if (!contatoProcessar.isEmpty()){
-            update contatoProcessar;
-        }
-    }
-
-    // public void atualizarEnderecosContatos(List<Account> contas){
-    //     if (contas.isEmpty()){
-    //         System.debug('Nenhuma conta fornecida para atualização de endereço do contato.');
-    //         return;
-    //     }
-
-    //     List<Contact> contatosParaAtualizar = new List<Contact>();
-
-    //     for (Account conta : contas){
-    //         // Verifica se a conta tem pelo menos 2 contatos associados
-    //         if (conta.Contacts == null || conta.Contacts.size() < 2){
-    //             System.debug('A conta ' + conta.Name + ' não tem pelo menos 2 contatos associados. O endereço dos contatos não será atualizado.');
-    //             continue;
-    //         }
-
-    //         // Address contaAddress = new Address(conta.BillingStreet, conta.BillingCity, conta.BillingState, conta.BillingPostalCode, conta.BillingCountry);
-
-    //         for (Contact contato : conta.Contacts){
-    //             contato.MailingStreet = conta.BillingStreet;
-    //             contato.MailingCity = conta.BillingCity;
-    //             contato.MailingState = conta.BillingState;
-    //             contato.MailingPostalCode = conta.BillingPostalCode;
-    //             contato.MailingCountry = conta.BillingCountry;
-    //             contatosParaAtualizar.add(contato);
-    //         }
-    //     }
-
-    //     if (!contatosParaAtualizar.isEmpty()){
-    //         update contatosParaAtualizar;
-    //     }
-    // }
-
-    public void atualizarEnderecosContatos(List<Account> contas) {
-        // Verifica se a lista de contas é válida
-        if (contas.isEmpty()) {
-            return;
-        }
-        
-        // Cria um mapa de contatos com suas contas associadas
-        Map<Id, List<Account>> contasPorContato = new Map<Id, List<Account>>();
-        for (Account conta : contas) {
-            if (conta.Contacts != null) {
-                for (Contact contato : conta.Contacts) {
-                    if (!contasPorContato.containsKey(contato.Id)) {
-                        contasPorContato.put(contato.Id, new List<Account>());
-                    }
-                    contasPorContato.get(contato.Id).add(conta);
+        //Processa os contatos que serão atualizados
+        for (Account conta : contas){
+            for (Contact contact : contatosLista){
+                // Atualiza os endereços do contato com os da conta
+                if (conta.Id == contact.AccountId){
+                    Contact contato = new Contact(Id = contact.Id, AccountId = contact.AccountId);
+                    contato.MailingStreet = conta.BillingStreet;
+                    contato.MailingCity = conta.BillingCity;
+                    contato.MailingState = conta.BillingState;
+                    contato.MailingPostalCode = conta.BillingPostalCode;
+                    contato.MailingCountry = conta.BillingCountry;
+                    contatosParaAtualizar.add(contato);
                 }
             }
         }
-        
-        List<Contact> contatosParaAtualizar = new List<Contact>();
-        
-        for (Id contatoId : contasPorContato.keySet()) {
-            List<Account> contasAssociadas = contasPorContato.get(contatoId);
-            
-            // Verifica se o contato está associado a pelo menos duas contas
-            if (contasAssociadas == null || contasAssociadas.size() < 2) {
-                System.debug('O contato com ID ' + contatoId + ' não está associado a pelo menos duas contas. O endereço do contato não será atualizado.');
-                continue;
-            }
-            
-            // Preenche o endereço do contato com o endereço da primeira conta associada
-            Account primeiraConta = contasAssociadas[0];
-            Address contaAddress = new Address(primeiraConta.BillingStreet, primeiraConta.BillingCity, primeiraConta.BillingState, primeiraConta.BillingPostalCode, primeiraConta.BillingCountry);
-            
-            Contact contato = new Contact(Id=contatoId, MailingStreet=contaAddress.getStreet(), MailingCity=contaAddress.getCity(), MailingState=contaAddress.getState(), MailingPostalCode=contaAddress.getPostalCode(), MailingCountry=contaAddress.getCountry());
-            contatosParaAtualizar.add(contato);
-        }
-        
         // Atualiza os contatos
-        if (!contatosParaAtualizar.isEmpty()) {
-            update contatosParaAtualizar;
-        }
+        update contatosParaAtualizar;
     }
-    
 
 }
-

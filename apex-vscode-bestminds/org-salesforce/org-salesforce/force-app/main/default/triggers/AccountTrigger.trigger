@@ -21,30 +21,14 @@ trigger AccountTrigger on Account (before insert, before delete, after insert, a
     }
 
     if (Trigger.isInsert && Trigger.isAfter){
-        // AccountBO.getInstance().criarOportunidade(Trigger.new );
         AccountBO.getInstance().criarContatoOportunidadeDeContaNova(Trigger.new );
         AccountBO.getInstance().criarFicharioDeContaNova(Trigger.new );
         AccountBO.getInstance().atualizarUltimaOportunidade(Trigger.new );
     }
 
     if (Trigger.isUpdate && Trigger.isAfter){
-        AccountBO.getInstance().atualizarEnderecosContatos(Trigger.new);
-        // AccountBO.getInstance().atualizarQuantidadeFilialMatriz(Trigger.new);
+        AccountBO.getInstance().atualizarEnderecosDeContaEContato(Trigger.new);
         AccountBO.getInstance().tratarOportunidade(Trigger.new );
-        // AccountBO.getInstance().atualizarUltimaOportunidadeConta(Trigger.new);
     }
 
-    // if (Trigger.isInsert && Trigger.isAfter){
-    //     AccountBO.getInstance().criarOportunidade(Trigger.new );
-    // }
-    // if (Trigger.isInsert && Trigger.isBefore){
-    //     AccountBO.getInstance().preencherTipo(Trigger.new );
-    // }
-    // if (Trigger.isUpdate && Trigger.isAfter){
-    //     AccountBO.getInstance().tratarOportunidade(Trigger.new );
-    // }
-    //--
-    // if (Trigger.isAfter){
-    //     AccountBO.getInstance().atualizarOportunidadesConta(Trigger.new, Trigger.oldMap);
-    // }
 }
