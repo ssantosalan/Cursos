@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -17,5 +18,7 @@ public class App {
         numeros.add(1);
         Collections.sort(numeros, Comparator.naturalOrder());
         System.out.println(numeros);
+        String word = "Alan Silva dos Santos";
+        System.out.println(Arrays.toString(word.split(" ")));
     }
 }
