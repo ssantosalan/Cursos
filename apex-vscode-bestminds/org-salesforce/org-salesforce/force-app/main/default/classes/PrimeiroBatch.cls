@@ -13,6 +13,7 @@ public with sharing class PrimeiroBatch implements Database.Batchable<sObject>{
 
     public void finish(Database.BatchableContext bc){
         // Executa qualquer lógica final após o processamento de todos os lotes.
+        System.debug('DEBUG >>> PrimeiroBatch >>> Finished');
     }
 
 }

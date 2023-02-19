@@ -368,7 +368,6 @@ public class AccountBO{
     }
 
     public void atualizarEnderecosDeContaEContato(List<Account> contas){
-        List<Account> contasParaAtualizar = new List<Account>();
         List<Contact> contatosParaAtualizar = new List<Contact>();
 
         //Pega IDs exclusivos das contas
