@@ -1,5 +1,15 @@
 public with sharing class ContactBO{
-  
+    private static ContactBO instance = new ContactBO();
+    public static ContactBO getInstance(){
+        return instance;
+    }
+
+    public List<Contact> buscarIdNovoContatoAlan(){
+        List<Contact> novoContatoAlan = [SELECT Id, LastName
+                                         FROM Contact
+                                         WHERE LastName = 'Novo Contato Alan'];
+        return novoContatoAlan;
+    }
 
 }
 

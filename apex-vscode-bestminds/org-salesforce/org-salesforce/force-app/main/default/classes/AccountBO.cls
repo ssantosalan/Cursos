@@ -367,6 +367,7 @@ public class AccountBO{
         update contas;
     }
 
+    //exercício 1 - batch
     public void atualizarEnderecosDeContaEContato(List<Account> contas){
         List<Contact> contatosParaAtualizar = new List<Contact>();
 

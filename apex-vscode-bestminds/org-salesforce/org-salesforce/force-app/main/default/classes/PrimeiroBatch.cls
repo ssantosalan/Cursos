@@ -1,3 +1,4 @@
+// Exercício 1 parte 1
 public with sharing class PrimeiroBatch implements Database.Batchable<sObject>{
     // Atualizar endereço de contato
     public Database.QueryLocator start(Database.BatchableContext bc){
@@ -17,3 +18,6 @@ public with sharing class PrimeiroBatch implements Database.Batchable<sObject>{
     }
 
 }
+
+// PrimeiroBatch primeiroBatch = new PrimeiroBatch();
+// database.executeBatch(primeiroBatch) ;

@@ -5,7 +5,6 @@ public with sharing class ProfessorBatchClass{
     //                                          FROM Case
     //                                          WHERE ContactId = null AND Status != 'Closed']);
     //     }
-
     //     public void execute(Database.BatchableContext bc, List<Case> casoList){
     //         CaseBO.fecharCasoSemContato(casoList);
     //         // public static void fecharCasoSemContato(List<Case> casoList){
@@ -16,13 +15,10 @@ public with sharing class ProfessorBatchClass{
     //         //     }
     //         //     update casoAtualizarList;
     //         }
-
     //     }
-
     //     public void finish(Database.BatchableContext bc){
     //     }
+}
 
-    // }
-
-    // // Como executar o batch manualmenteFecharCasosBatch fecharCasosBatch = new FecharCasosBatch();
-    // Database.executeBatch(fecharCasosBatch);
+// // Como executar o batch manualmenteFecharCasosBatch fecharCasosBatch = new FecharCasosBatch();
+// Database.executeBatch(fecharCasosBatch);

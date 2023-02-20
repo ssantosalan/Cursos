@@ -9,3 +9,9 @@ System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
 PrimeiroBatch primeiroBatch = new PrimeiroBatch();
 database.executeBatch(primeiroBatch) ;
+
+SegundoBatch batch = new SegundoBatch();
+Database.executeBatch(batch);
+
+PrimeiroSchedule schedule = new PrimeiroSchedule();
+Database.executeBatch(schedule.);
