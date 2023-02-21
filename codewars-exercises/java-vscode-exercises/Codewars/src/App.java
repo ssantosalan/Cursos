@@ -27,6 +27,7 @@ public class App {
     Padeiro padeiro = new Padeiro();
 
     padeiro.apresentar("Alan"); 
+    padeiro.apresentar("Alan"); 
 
   }
 }
