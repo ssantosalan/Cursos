@@ -349,23 +349,25 @@ public class AccountBO{
     //         conta.UltimaOportunidade__c =
     //     }
     // }
-    public void atualizarUltimaOportunidade(List<Account> contas){
-        List<Opportunity> oportunidades = [SELECT AccountId, CloseDate
-                                           FROM Opportunity
-                                           WHERE AccountId IN:contas
-                                           ORDER BY CloseDate DESC];
-        Map<Id, Id> ultimasOportunidades = new Map<Id, Id>();
-        for (Opportunity oportunidade : oportunidades){
-            ultimasOportunidades.put(oportunidade.AccountId, oportunidade.AccountId);
-        }
-        for (Account conta : contas){
-            if (ultimasOportunidades.containsKey(conta.Id)){
-                conta.UltimaOportunidade__c = ultimasOportunidades.get(conta.Id);
-            }
-        }
-        System.debug('CHEGOU AQUI AccountBO >> atualizarUltimaOportunidade >>ultimasOportunidades' + ultimasOportunidades);
-        update contas;
-    }
+
+    //certo
+    // public void atualizarUltimaOportunidade(List<Account> contas){
+    //     List<Opportunity> oportunidades = [SELECT AccountId, CloseDate
+    //                                        FROM Opportunity
+    //                                        WHERE AccountId IN:contas
+    //                                        ORDER BY CloseDate DESC];
+    //     Map<Id, Id> ultimasOportunidades = new Map<Id, Id>();
+    //     for (Opportunity oportunidade : oportunidades){
+    //         ultimasOportunidades.put(oportunidade.AccountId, oportunidade.AccountId);
+    //     }
+    //     for (Account conta : contas){
+    //         if (ultimasOportunidades.containsKey(conta.Id)){
+    //             conta.UltimaOportunidade__c = ultimasOportunidades.get(conta.Id);
+    //         }
+    //     }
+    //     System.debug('CHEGOU AQUI AccountBO >> atualizarUltimaOportunidade >>ultimasOportunidades' + ultimasOportunidades);
+    //     update contas;
+    // }
 
     //exercício 1 - batch
     public void atualizarEnderecosDeContaEContato(List<Account> contas){

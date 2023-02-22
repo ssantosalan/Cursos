@@ -20,11 +20,11 @@ public with sharing class OpportunityBO{
     @Future
     public static void passarContatoContaParaOportunidade(Set<Id> contasIdSet){
         List<Contact> contatosContaFiltrada = [SELECT Id, Name
-                                               FROM Contact
+                                               FROM Contact 
                                                WHERE AccountId IN:contasIdSet];
-                                               
+
         List<Opportunity> oportunidadeContaFiltrada = [SELECT Id, Name
-                                                       FROM Opportunity
+                                                       FROM Opportunity 
                                                        WHERE AccountId IN:contasIdSet];
 
         //Processar contatos
@@ -163,4 +163,67 @@ public with sharing class OpportunityBO{
     //     }
     //     insert contatosProcessar;
     // }
+    public void criarContratoParaOportunidade(List<Opportunity> oportunidadesLista){
+        // Cria uma lista para armazenar os IDs dos contratos criados
+        List<Id> contractIds = new List<Id>();
+        List<Opportunity> opportunitiesToUpdate = new List<Opportunity>();
+        List<Contract> contractsToInsert = new List<Contract>();
+        // Percorre as oportunidades que atendem aos critérios
+        for (Opportunity opp : oportunidadesLista){
+            if (opp.StageName == 'Closed Won' || opp.Amount > 100000){
+
+                // Cria um novo contrato e define seus valores
+                Contract newContract = new Contract();
+                newContract.AccountId = opp.AccountId;
+                newContract.StartDate = Date.today();
+                newContract.Status = 'Draft';
+                newContract.Description = 'Contract created for Opportunity ' + opp.Name;
+
+                // Adiciona o contrato à lista de contratos a serem inseridos
+                contractsToInsert.add(newContract);
+
+                // Adiciona o ID do contrato à lista de IDs de contrato
+                contractIds.add(newContract.Id);
+
+                // Adiciona a oportunidade à lista de oportunidades a serem atualizadas
+                opportunitiesToUpdate.add(opp);
+            }
+        }
+
+        // Insere os novos contratos
+        insert contractsToInsert;
+
+        // Percorre as oportunidades a serem atualizadas e associa o contrato a elas
+        for (Opportunity opp : opportunitiesToUpdate){
+            opp.ContractId = contractIds.get(0);
+        }
+
+        // Atualiza as oportunidades com as referências aos contratos
+        update opportunitiesToUpdate;
+    }
+
+    /* Queueable */
+    // public void atualizarOportunidadeSemContato(List<Opportunity> oportunidadeLista){
+    //     for (Opportunity opp : opportunities){
+    //         List<ContactRole> contacts = [SELECT ContactId
+    //                                       FROM ContactRole
+    //                                       WHERE OpportunityId = :opp.Id];
+    //         if (contacts.isEmpty()){
+    //             Account account = [SELECT Id, (SELECT Id
+    //                                            FROM Contacts)
+    //                                FROM Account
+    //                                WHERE Id = :opp.AccountId
+    //                                LIMIT 1];
+    //             if (!account.Contacts.isEmpty()){
+    //                 Contact contact = account.Contacts[0];
+    //                 opp.Contact__c = contact.Id;
+    //             }
+    //         }
+    //     }
+    //     Database.update (opportunities);
+    // }
+
+    /* Queueable 
+    */
+
 }

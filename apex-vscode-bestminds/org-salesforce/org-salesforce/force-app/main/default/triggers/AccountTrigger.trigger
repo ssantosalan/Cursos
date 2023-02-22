@@ -6,10 +6,6 @@ trigger AccountTrigger on Account (before insert, before delete, after insert, a
 
     }
 
-    if (Trigger.isUpdate && Trigger.isBefore){
-        AccountBO.getInstance().atualizarUltimaOportunidade(Trigger.new );
-    }
-
     if (Trigger.isUndelete){
         AccountBO.getInstance().recuperarContaECriarCaso(Trigger.new );
     }
@@ -17,18 +13,22 @@ trigger AccountTrigger on Account (before insert, before delete, after insert, a
     if (Trigger.isInsert && Trigger.isBefore){
         AccountBO.getInstance().preencherTipo(Trigger.new );
         AccountBO.getInstance().atualizarDescricaoContaCriar(Trigger.new );
-
+        // AccountBO.getInstance().atualizarUltimaOportunidade(Trigger.new );
     }
 
     if (Trigger.isInsert && Trigger.isAfter){
         AccountBO.getInstance().criarContatoOportunidadeDeContaNova(Trigger.new );
         AccountBO.getInstance().criarFicharioDeContaNova(Trigger.new );
-        AccountBO.getInstance().atualizarUltimaOportunidade(Trigger.new );
+        // AccountBO.getInstance().atualizarUltimaOportunidade(Trigger.new );
     }
 
     if (Trigger.isUpdate && Trigger.isAfter){
         AccountBO.getInstance().atualizarEnderecosDeContaEContato(Trigger.new);
         AccountBO.getInstance().tratarOportunidade(Trigger.new );
+    }
+
+    if (Trigger.isUpdate && Trigger.isBefore){
+        // AccountBO.getInstance().atualizarUltimaOportunidade(Trigger.new );
     }
 
 }

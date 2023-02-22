@@ -3,8 +3,7 @@ public with sharing class PrimeiroBatch implements Database.Batchable<sObject>{
     // Atualizar endereço de contato
     public Database.QueryLocator start(Database.BatchableContext bc){
         // Receber lista de Contatos.
-        return Database.getQueryLocator([SELECT Id
-                                         FROM Account]);
+        return Database.getQueryLocator([SELECT Id, BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry FROM Account]);
     }
 
     public void execute(Database.BatchableContext bc, List<Account> contasLista){
