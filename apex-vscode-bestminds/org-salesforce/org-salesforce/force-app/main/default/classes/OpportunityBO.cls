@@ -226,4 +226,7 @@ public with sharing class OpportunityBO{
     /* Queueable 
     */
 
+    //Queue Exercicio
+    
+
 }

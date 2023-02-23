@@ -9,15 +9,18 @@ System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
 PrimeiroBatch primeiroBatch = new PrimeiroBatch();
 database.executeBatch(primeiroBatch) ;
-
 SegundoBatch batch = new SegundoBatch();
 Database.executeBatch(batch);
-
 // PrimeiroSchedule schedule = new PrimeiroSchedule();
 // Database.executeBatch(schedule.);
 //
-
 ClassificacaoClienteConta classifica = new ClassificacaoClienteConta();
 Database.executeBatch(classifica);
-
 ClassificacaoClienteContaSchedule.agendar();
+
+QueueExercicio queueable = new QueueExercicio([SELECT Id, AccountId
+                                              FROM Opportunity]);
+System.enqueueJob(queueable);
+
+
+System.enqueueJob(new QueueSegundoExercicioQueueable());
