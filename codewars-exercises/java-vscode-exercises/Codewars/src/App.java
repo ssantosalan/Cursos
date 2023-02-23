@@ -25,9 +25,10 @@ public class App {
     System.out.println(Arrays.toString(word.split(" ")));
 
     Padeiro padeiro = new Padeiro();
-
+    
     padeiro.apresentar("Alan"); 
     padeiro.apresentar("Alan"); 
+    System.out.println(padeiro.nome);
 
   }
 }
