@@ -349,7 +349,6 @@ public class AccountBO{
     //         conta.UltimaOportunidade__c =
     //     }
     // }
-
     //certo
     // public void atualizarUltimaOportunidade(List<Account> contas){
     //     List<Opportunity> oportunidades = [SELECT AccountId, CloseDate
@@ -368,7 +367,6 @@ public class AccountBO{
     //     System.debug('CHEGOU AQUI AccountBO >> atualizarUltimaOportunidade >>ultimasOportunidades' + ultimasOportunidades);
     //     update contas;
     // }
-
     //exercício 1 - batch
     public void atualizarEnderecosDeContaEContato(List<Account> contas){
         List<Contact> contatosParaAtualizar = new List<Contact>();
@@ -400,6 +398,39 @@ public class AccountBO{
         }
         // Atualiza os contatos
         update contatosParaAtualizar;
+    }
+
+    //exercício dinâmica - bruno
+    public void calcularClassificacaoClienteConta(List<Account> contaLista){
+        if (contaLista.isEmpty()){
+            return;
+        }
+
+        List<Account> contasAtualizar = new List<Account>();
+        for (Account conta : contaLista){
+            if (conta == null || conta.AnnualRevenue == null){
+                continue;
+            }
+            if (conta.AnnualRevenue >= 0 && conta.AnnualRevenue <= 5000){
+                conta.ClassificacaoCliente__c = 'Prata';
+                contasAtualizar.add(conta);
+                continue;
+            }
+            if (conta.AnnualRevenue >= 5001 && conta.AnnualRevenue <= 500000){
+                conta.ClassificacaoCliente__c = 'Ouro';
+                contasAtualizar.add(conta);
+                continue;
+            }
+            if (conta.AnnualRevenue >= 500000){
+                conta.ClassificacaoCliente__c = 'Diamante';
+                contasAtualizar.add(conta);
+                continue;
+            }
+        }
+
+        if (!contasAtualizar.isEmpty()){
+            update contasAtualizar;
+        }
     }
 
 }

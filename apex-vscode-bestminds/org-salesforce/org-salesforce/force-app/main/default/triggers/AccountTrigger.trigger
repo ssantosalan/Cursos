@@ -17,6 +17,7 @@ trigger AccountTrigger on Account (before insert, before delete, after insert, a
     }
 
     if (Trigger.isInsert && Trigger.isAfter){
+        ExercicioSOQL.getInstance().criaTaskParaAccount(Trigger.new );
         AccountBO.getInstance().criarContatoOportunidadeDeContaNova(Trigger.new );
         AccountBO.getInstance().criarFicharioDeContaNova(Trigger.new );
         // AccountBO.getInstance().atualizarUltimaOportunidade(Trigger.new );
