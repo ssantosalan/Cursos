@@ -11,8 +11,10 @@ PrimeiroBatch primeiroBatch = new PrimeiroBatch();
 database.executeBatch(primeiroBatch) ;
 SegundoBatch batch = new SegundoBatch();
 Database.executeBatch(batch);
+
 // PrimeiroSchedule schedule = new PrimeiroSchedule();
-// Database.executeBatch(schedule.);
+// Database.executeBatch(schedule);
+
 //
 ClassificacaoClienteConta classifica = new ClassificacaoClienteConta();
 Database.executeBatch(classifica);
