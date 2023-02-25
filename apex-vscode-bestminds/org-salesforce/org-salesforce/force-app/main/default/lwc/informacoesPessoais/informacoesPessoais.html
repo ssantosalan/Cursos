@@ -1,0 +1,22 @@
+<template>
+    <form>
+        <h1>Informações do cliente</h1>
+        <label for="Informações do Pessoa:"></label>
+
+        <lightning-input type="text" label="Nome:" name="nome" value={nome} onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="text" label="Email:" name="email" value={email} onchange={handleInputChange}></lightning-input>
+
+        <button type="submit" onclick={handleMostrarInformacoesPessoa}>Mostrar</button>
+
+        <template if:true={exibirInformacoesPessoa}>
+            <div>
+                <label>Informações do cliente:</label>
+                <ul>
+                    <li>Nome: {nome}</li>
+                    <li>Email: {email}</li>
+                </ul>
+            </div>
+        </template>
+    </form>
+</template>
