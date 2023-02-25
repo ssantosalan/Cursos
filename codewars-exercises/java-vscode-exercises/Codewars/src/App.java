@@ -26,9 +26,10 @@ public class App {
 
     Padeiro padeiro = new Padeiro();
     padeiro.setNome("Alan");
+    padeiro.setIdade((18));
     padeiro.apresentar("Alan"); 
     padeiro.apresentar("Alan"); 
-    System.out.println("Eu sou o " + padeiro.nome);
+    System.out.println("Eu sou o " + padeiro.nome + " e tenho " + padeiro.idade);
 
   }
 }
