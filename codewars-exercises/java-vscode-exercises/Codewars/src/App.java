@@ -31,5 +31,7 @@ public class App {
     padeiro.apresentar("Alan"); 
     System.out.println("Eu sou o " + padeiro.nome + " e tenho " + padeiro.idade);
 
+    int[] result = Codewars.take(new int[]{0, 1, 2, 3, 5, 8, 13}, 3);
+    System.out.println(Arrays.toString(result));
   }
 }
