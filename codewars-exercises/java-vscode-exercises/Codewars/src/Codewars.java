@@ -4,7 +4,7 @@ public class Codewars {
             return new int[0];
         }
         int[] result = new int[Math.min(n, arr.length)];
-        for (int i = 0; i < result.length; i++) {
+        for (int i = 0;  i < result.length; i++) {
             result[i] = arr[i];
         }
         return result;
