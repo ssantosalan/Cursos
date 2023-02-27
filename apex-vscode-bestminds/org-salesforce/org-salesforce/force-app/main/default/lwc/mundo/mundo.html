@@ -1,0 +1,43 @@
+<template>
+    <form>
+        <h1>CRIAR MUNDO</h1>
+        <label for="Informações do Pessoa:"></label>
+
+        <lightning-input type="text" label="Nome:" name="nome" value={nome}
+            onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="text" label="Cor:" name="cor" value={cor} onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="number" label="Distância do sol:" name="distanciaSol" value={distanciaSol}
+            onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="checkbox" label="Possui água:" name="possuiAgua" value={possuiAgua}
+            onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="number" label="Quantidade de luas:" name="quantidadeLuas" value={quantidadeLuas}
+            onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="number" label="Tamanho:" name="tamanho" value={tamanho}
+            onchange={handleInputChange}></lightning-input>
+
+
+
+        <button type="submit" onclick={handleCriarMundo}>Criar</button>
+
+        <lightning-input type="toggle" label="Mostrar quantidade de Lua:" name="mostrarQntLua" value={mostrarQntLua}
+            onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="toggle" label="Mostrar cor:" name="mostrarCor" value={mostrarCor}
+            onchange={handleInputChange}></lightning-input>
+
+        <lightning-input type="toggle" label="Selecionar Tudo:" name="selecionarTudo" value={selecionarTudo}
+            onchange={handleInputChange}></lightning-input>
+
+    </form>
+
+    <div>
+        <!-- <c-mundo-table></c-mundo-table> -->
+        <c-mundo-table mundo-lista={mundoTOLista}></c-mundo-table>
+    </div>
+
+</template>

@@ -1,0 +1,39 @@
+/* MundoTable CSS */
+
+:host {
+    display: block;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}

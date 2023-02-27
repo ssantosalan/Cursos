@@ -1,0 +1,46 @@
+<template>
+    <h1>Mundos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <template if:true={mostrarCor}>
+                    <th>Cor</th>
+                </template>
+                <th>Distância do Sol</th>
+                <template if:true={mostrarTamanho}>
+                    <th>Tamanho</th>
+                </template>
+                <template if:true={mostrarQntLua}>
+                    <th>Quantidade de Luas</th>
+                </template>
+                <th>Possui Água</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={mundoLista} for:item="mundo">
+                <tr key={mundo.id}>
+                    <td>{mundo.nome}</td>
+                    <template if:true={mostrarCor}>
+                        <td>{mundo.cor}</td>
+                    </template>
+                    <td>{mundo.distanciaSol}</td>
+                    <template if:true={mostrarTamanho}>
+                        <td>{mundo.tamanho}</td>
+                    </template>
+                    <template if:true={mostrarQntLua}>
+                        <td>{mundo.quantidadeLuas}</td>
+                    </template>
+                    <td>
+                        <template if:true={mundo.possuiAgua}>
+                            Sim
+                        </template>
+                        <template if:false={mundo.possuiAgua}>
+                            Não
+                        </template>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>
