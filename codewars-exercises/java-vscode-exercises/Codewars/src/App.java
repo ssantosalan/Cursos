@@ -33,5 +33,14 @@ public class App {
 
     int[] result = Codewars.take(new int[]{0, 1, 2, 3, 5, 8, 13}, 3);
     System.out.println(Arrays.toString(result));
+    List<Integer> lista = new ArrayList<Integer>();
+    lista.add(1);
+    lista.add(2);
+    lista.add(0);
+    lista.sort(null);
+    System.out.println(lista);
+    int numero = 5566;
+    char[] digitos = String.valueOf(numero).toCharArray();
+    System.out.println(Arrays.toString(digitos));
   }
 }
