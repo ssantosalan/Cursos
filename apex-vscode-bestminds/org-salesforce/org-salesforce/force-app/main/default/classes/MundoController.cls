@@ -59,6 +59,9 @@ public with sharing class MundoController{
         @AuraEnabled
         public Boolean possuiAgua{ get; set; }
 
+        @AuraEnabled
+        public Boolean selecionado{ get; set; }
+
     }
 
 }

@@ -10,11 +10,11 @@ export default class Mundo extends LightningElement {
     @track distanciaSol = 0;
     @track quantidadeLuas = 0;
     @track tamanho = 0;
+    @track mundoTOLista = [];
     @track possuiAgua = false;
     @track mostrarQntLua = false;
     @track mostrarCor = false;
     @track selecionarTudo = false;
-    @track mundoTOLista = [];
 
     handleInputChange(event) {
         const { name, value, checked } = event.target;

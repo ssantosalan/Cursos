@@ -20,12 +20,10 @@
         <lightning-input type="number" label="Tamanho:" name="tamanho" value={tamanho}
             onchange={handleInputChange}></lightning-input>
 
-
-
-        <button type="submit" onclick={handleCriarMundo}>Criar</button>
+        <lightning-button type="submit" label="Criar" onclick={handleCriarMundo}>Criar</lightning-button>
 
         <lightning-input type="toggle" label="Mostrar quantidade de Lua:" name="mostrarQntLua" value={mostrarQntLua}
-            onchange={handleInputChange}></lightning-input>
+            onchange={handleInputChange}>Mostrar quantidade de Lua:</lightning-input>
 
         <lightning-input type="toggle" label="Mostrar cor:" name="mostrarCor" value={mostrarCor}
             onchange={handleInputChange}></lightning-input>
@@ -36,8 +34,7 @@
     </form>
 
     <div>
-        <!-- <c-mundo-table></c-mundo-table> -->
-        <c-mundo-table mundo-lista={mundoTOLista}></c-mundo-table>
+        <c-mundo-table mundo-lista={mundoTOLista} mostrar-qnt-lua={mostrarQntLua} mostrar-cor={mostrarCor} selecionar-tudo={selecionarTudo}></c-mundo-table>
     </div>
 
 </template>

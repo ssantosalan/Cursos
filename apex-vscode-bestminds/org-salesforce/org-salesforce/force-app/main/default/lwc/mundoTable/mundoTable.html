@@ -3,6 +3,7 @@
     <table>
         <thead>
             <tr>
+                <th>Selecionar</th>
                 <th>Nome</th>
                 <template if:true={mostrarCor}>
                     <th>Cor</th>
@@ -20,6 +21,10 @@
         <tbody>
             <template for:each={mundoLista} for:item="mundo">
                 <tr key={mundo.id}>
+                    <td>
+                        <lightning-input type="checkbox" name="checkBoxGridI" checked={mundo.selecionado}
+                            data-id={mundo.id} onchange={handleInputChange}></lightning-input>
+                    </td>
                     <td>{mundo.nome}</td>
                     <template if:true={mostrarCor}>
                         <td>{mundo.cor}</td>
