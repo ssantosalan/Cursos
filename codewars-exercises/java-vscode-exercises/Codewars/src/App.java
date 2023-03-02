@@ -43,6 +43,6 @@ public class App {
     char[] digitos = String.valueOf(numero).toCharArray();
     System.out.println(Arrays.toString(digitos));
     System.out.println(
-      "alan");
+      "alan ");
   }
 }
