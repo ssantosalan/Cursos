@@ -44,5 +44,6 @@ public class App {
     System.out.println(Arrays.toString(digitos));
     System.out.println(
       "alan ");
+      System.out.println("teste");
   }
 }
