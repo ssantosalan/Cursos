@@ -1,50 +1,26 @@
-<!-- <template>
-    <h1>Entrevistas do candidato</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-
-                <th>Status</th>
-
-                <th>Data</th>
-
-                <th>Detalhes</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
-</template> -->
-
-<!-- <template>
-    <template if:true={entrevistas}>
-        <h2>Entrevistas</h2>
-        <ul>
-            <template for:each={entrevistas} for:item="entrevista">
-                <li key={entrevista.Id}>
-                    <div>{entrevista.Vaga__r.Name}</div>
-                    <div>{entrevista.Vaga__r.Status__c}</div>
-                    <div>{entrevista.Data_da_Entrevista__c}</div>
-                    <div>{entrevista.Detalhes_da_Entrevista__c}</div>
-                </li>
-            </template>
-        </ul>
-    </template>
-    <template if:false={entrevistas}>
-        <p>Não há entrevistas cadastradas para este candidato.</p>
-    </template>
-</template> -->
-
 <template>
-    <lightning-card title="Entrevistas realizadas">
-        <template if:true={entrevistas.length}>
-            <lightning-datatable key-field="Id" data={entrevistas} columns={columns}>
-            </lightning-datatable>
-        </template>
-        <template if:false={entrevistas.length}>
-            Nenhuma entrevista encontrada.
-        </template>
+    <lightning-card title="Entrevistas do candidato">
+        <table class="slds-p-around_small table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={entrevistas} for:item="entrevista">
+                    <tr key={entrevista.id}>
+                        <td>{entrevista.vagaNome}</td>
+                        <td>{entrevista.vagaStatus}</td>
+                        <td><lightning-formatted-date-time value={entrevista.entrevistaData} year="numeric"
+                                month="numeric" day="numeric" hour="2-digit"
+                                minute="2-digit"></lightning-formatted-date-time></td>
+                        <td>{entrevista.entrevistaDetalhes}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
     </lightning-card>
 </template>

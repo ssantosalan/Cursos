@@ -1,24 +1,21 @@
 import { LightningElement, track, api } from 'lwc';
+import obterEntrevistaCls from '@salesforce/apex/EntrevistasCandidatoController.obterEntrevista';
 
 export default class EntrevistasCandidato extends LightningElement {
-    // @track nome = '';
-    // @track status = '';
-    // @track data = '';
-    // @track detalhes = '';
     @api recordId;
-    entrevistas = [];
+    @track entrevistas = [];
 
     connectedCallback() {
-        this.fetchInterviews();
+        this.buscarEntrevistas();
     }
 
-    fetchInterviews() {
-        getInterviews({ candidatoId: this.recordId })
+    buscarEntrevistas() {
+        obterEntrevistaCls({ candidatoId: this.recordId })
             .then(result => {
                 this.entrevistas = result;
             })
             .catch(error => {
-                console.error(error);
+                console.log(error);
             });
     }
 
