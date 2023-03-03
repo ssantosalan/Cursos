@@ -5,5 +5,7 @@ public class App {
         System.out.println("Hello, World!");
         System.out.println("Hello, World!");
         System.out.println("vamo");
+        String[] Letras = "vamos".split("");
+        System.out.println(Arrays.toString(Letras));
     }
 }
