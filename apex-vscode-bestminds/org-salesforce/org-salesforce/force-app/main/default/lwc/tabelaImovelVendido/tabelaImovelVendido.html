@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Últimos imóveis vendidos">
+        <table class="slds-var-p-around_small table">
+            <thead>
+                <tr>
+                    <th>Número do imóvel</th>
+                    <th>Tipo do imóvel</th>
+                    <th>Nome do cliente</th>
+                    <th>Valor da venda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={imoveis} for:item="imovel">
+                    <tr class="slds-hint-parent" key={imovel.id}>
+                        <td>{imovel.Imovel__r.Name}</td>
+                        <td>{imovel.Imovel__r.RecordType.Name}</td>
+                        <td>{imovel.Contact__r.Name}</td>
+                        <td>{imovel.Valor__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
