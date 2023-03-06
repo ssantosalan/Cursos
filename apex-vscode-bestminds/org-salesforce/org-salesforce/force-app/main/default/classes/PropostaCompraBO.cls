@@ -1,4 +1,54 @@
 public with sharing class PropostaCompraBO{
+    public static void criarComissaoSeAguardandoPagamento(List<PropostaCompra__c> propostaCompraLista, Map<Id, PropostaCompra__c> propostaCompraOldMapList){
+        if (propostaCompraLista.isEmpty() || propostaCompraOldMapList.isEmpty()){
+            return;
+        }
+
+        Set<Id> propostasAguardandoPagamento = new Set<Id>();
+        for (PropostaCompra__c proposta : propostaCompraLista){
+            PropostaCompra__c oldProposta = propostaCompraOldMapList.get(proposta.Id);
+            if (proposta.Status__c == 'Aguardando pagamento' && oldProposta.Status__c != 'Aguardando pagamento'){
+                propostasAguardandoPagamento.add(proposta.Id);
+            }
+        }
+
+        if (propostasAguardandoPagamento.isEmpty()){
+            return;
+        }
+
+        Map<String, ConfiguracaoPropostaCompra__mdt> configuracoesPorTipo = new Map<String, ConfiguracaoPropostaCompra__mdt>();
+        for (ConfiguracaoPropostaCompra__mdt configuracao : [SELECT Tipo__c, PercentualComissao__c
+                                                             FROM ConfiguracaoPropostaCompra__mdt]){
+            configuracoesPorTipo.put(configuracao.Tipo__c, configuracao);
+        }
+
+
+        List<Comissao__c> comissaoCriarLista = new List<Comissao__c>();
+        for (PropostaCompra__c proposta : [SELECT Id, Vendedor__c, Valor__c, Imovel__r.RecordType.Name
+                                           FROM PropostaCompra__c
+                                           WHERE Id IN:propostasAguardandoPagamento]){
+            ConfiguracaoPropostaCompra__mdt configuracao = configuracoesPorTipo.get(proposta.Imovel__r.RecordType.Name);
+
+            if (configuracao != null){
+                Decimal porcentagemComissao = configuracao.PercentualComissao__c / 100;
+                Decimal valorComissao = proposta.Valor__c * porcentagemComissao;
+
+                Comissao__c comissao = new Comissao__c();
+                comissao.OwnerId = proposta.Vendedor__c;
+                comissao.PropostaCompra__c = proposta.Id;
+                comissao.Valor__c = valorComissao;
+                comissao.Status__c = 'Em pagamento';
+
+                comissaoCriarLista.add(comissao);
+            }
+        }
+
+        if (comissaoCriarLista.isEmpty()){
+            return;
+        }
+        insert comissaoCriarLista;
+    }
+
     public static void preencherDataEntregaChaves(List<PropostaCompra__c> propostaCompraLista, Map<Id, PropostaCompra__c> propostaCompraOldMapList){
         if (propostaCompraLista == null || propostaCompraOldMapList.isEmpty()){
             return;
@@ -38,14 +88,14 @@ public with sharing class PropostaCompraBO{
                     propostaAtualizar.Id = proposta.Id;
                     propostaAtualizar.DataEntregaChaves__c = System.today() + (Integer) configuracao.DiasEntregaChaves__c;
                     propostasAtualizarLista.add(propostaAtualizar);
-                    // proposta.DataEntregaChaves__c = System.today() + (Integer) configuracao.DiasEntregaChaves__c;
                     break;
                 }
             }
         }
-        System.debug('PropostaCompraBO >>> preencherDataEntregaChaves >>> debug propostasFinalizadasLista >>>' + propostasFinalizadasLista);
-        System.debug('PropostaCompraBO >>> preencherDataEntregaChaves >>> debug propostasAtualizarLista >>>' + propostasAtualizarLista);
 
+        if (propostasAtualizarLista.isEmpty()){
+            return;
+        }
         update propostasAtualizarLista;
     }
 
