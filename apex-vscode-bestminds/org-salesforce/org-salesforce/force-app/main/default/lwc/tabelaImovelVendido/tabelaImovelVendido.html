@@ -11,11 +11,11 @@
             </thead>
             <tbody>
                 <template for:each={imoveis} for:item="imovel">
-                    <tr class="slds-hint-parent" key={imovel.id}>
-                        <td>{imovel.Imovel__r.Name}</td>
-                        <td>{imovel.Imovel__r.RecordType.Name}</td>
-                        <td>{imovel.Contact__r.Name}</td>
-                        <td>{imovel.Valor__c}</td>
+                    <tr class="slds-hint-parent" key={imovel.numeroImovel}>
+                        <td>{imovel.numeroImovel}</td>
+                        <td>{imovel.tipoImovel}</td>
+                        <td>{imovel.nomeCliente}</td>
+                        <td>{imovel.valorVenda}</td>
                     </tr>
                 </template>
             </tbody>
