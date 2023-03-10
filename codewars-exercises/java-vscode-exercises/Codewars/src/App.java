@@ -9,5 +9,6 @@ public class App {
     System.out.println("vamos");
     var list = List.of(1, 2, 3, 4, 5);
     System.out.println(list);
+    System.out.println(list);
   }
 }
