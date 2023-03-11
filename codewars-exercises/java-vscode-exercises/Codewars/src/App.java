@@ -1,14 +1,16 @@
+import java.util.Arrays;
 import java.util.List;
-
-import humanos.Padeiro;
 public class App {
-  public static void main(String[] args) throws Exception {
-    System.out.println("alan ");
-    System.out.println("teste");
-    System.out.println("teste");
-    System.out.println("vamos");
-    var list = List.of(1, 2, 3, 4, 5);
-    System.out.println(list);
-    System.out.println(list);
+  public static void main(String[] args) throws Exception {   
+    System.out.println(); 
+    String[] palavras = new String[]{"Barbara", "Oliveira", "Drops"};
+    System.out.println(Arrays.toString(palavras));
+  
+    System.out.println(SmashWords.smash(palavras));
+    System.out.println(SmashWords.smash2(palavras));
+    System.out.println(SmashWords.smash3(palavras));
+    System.out.println(SmashWords.smash4(palavras));
+    
+
   }
 }
