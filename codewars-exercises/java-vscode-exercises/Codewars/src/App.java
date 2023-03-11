@@ -11,6 +11,6 @@ public class App {
     System.out.println(SmashWords.smash3(palavras));
     System.out.println(SmashWords.smash4(palavras));
     
-
+    System.out.println(XOR.xor(true, true));
   }
 }
