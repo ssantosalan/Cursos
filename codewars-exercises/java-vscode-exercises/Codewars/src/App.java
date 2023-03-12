@@ -7,5 +7,7 @@ public class App {
 
     double[] vetor = new double[] { 1, 1, 8 };
     System.out.println(Arrays.toString(Xbonacci.tribonacci2(vetor, 4)));
+
+    System.out.println("Alan");
   }
 }
