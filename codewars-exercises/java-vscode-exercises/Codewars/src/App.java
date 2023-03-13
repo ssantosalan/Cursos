@@ -1,13 +1,16 @@
-import java.util.Arrays;
 import java.util.List;
 
+import humanos.Padeiro;
 public class App {
   public static void main(String[] args) throws Exception {
-    System.out.println();
+    System.out.println("alan ");
+    System.out.println("teste");
+    System.out.println("teste");
+    System.out.println("vamos");
+    System.out.println("vamos");
+    var list = List.of(1, 2, 3, 4, 5);
+    System.out.println(list);
+    System.out.println(list);
 
-    double[] vetor = new double[] { 1, 1, 8 };
-    System.out.println(Arrays.toString(Xbonacci.tribonacci2(vetor, 4)));
-
-    System.out.println("Alan");
   }
 }
