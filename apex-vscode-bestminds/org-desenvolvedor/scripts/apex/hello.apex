@@ -8,3 +8,8 @@
 string tempvar = 'Enter_your_name_here';
 System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
+
+EmailManager em = new EmailManager();
+em.sendMail('alanxdsi@gmail.com', 'Trailhead Tutorial', '123 body');
+
+EmailManager.sendMail('alanxdsi@gmail.com', 'Trailhead Tutorial', '123 body');
