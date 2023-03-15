@@ -149,3 +149,15 @@ Account[] queriedAccounts = [SELECT Id FROM Account WHERE Name='SFDC Account'];
 delete queriedAccounts;
 
 AccountHandler.insertNewAccount('');
+
+
+EmailMissionSpecialist em = new EmailMissionSpecialist();
+em.sendMail('testingemail', 'Flight Path Change', 
+   'Mission Control 123: Your flight path has been changed to avoid collision '
+   + 'with asteroid 2014 QO441.');
+
+
+EmailMissionSpecialist em = new EmailMissionSpecialist();
+em.sendMail('alanxdsi@gmail.com', 'Flight Path Change', 
+   'Mission Control 123: Your flight path has been changed to avoid collision '
+   + 'with asteroid 2014 QO441.');
