@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 import humanos.Padeiro;
@@ -10,5 +11,10 @@ public class App {
     var list = List.of(1, 2, 3, 4, 5);
     System.out.println(list);
     System.out.println(list);
+
+    List<String> lista = new ArrayList<String>();
+    lista.add("a");
+    System.out.println(lista);
+
   }
 }
