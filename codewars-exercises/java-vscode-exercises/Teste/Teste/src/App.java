@@ -7,8 +7,7 @@ import java.util.stream.Collectors;
 public class App {
     public static void main(String[] args) throws Exception {
         List<String> carroLista = new ArrayList<>();
-        
-        String carro = ""; 
+        String carro = "";
         for (int i = 1; i <= 5; i++) {
             carro = "carro " + i;
             carroLista.add(carro);
