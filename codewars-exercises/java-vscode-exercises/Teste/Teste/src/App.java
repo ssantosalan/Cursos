@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import entities.Aluno;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("thefutureisnow");
-        var lista = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+        Aluno aluno1 = new Aluno("Alan", "Senac", "431.331.331.00", "Último ano");
 
-        System.out.println(lista);
-
+        System.out.println(aluno1);
     }
 
 }
