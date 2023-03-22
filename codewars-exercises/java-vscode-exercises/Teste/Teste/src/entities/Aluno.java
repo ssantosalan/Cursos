@@ -28,16 +28,16 @@ public class Aluno extends Pessoa {
 
     public void setAno(String ano) {
         this.ano = ano;
-    } 
-
-    
+    }
 
     @Override
     public String toString() {
         return "{" +
-            " escola='" + getEscola() + "'" +
-            ", ano='" + getAno() + "'" +
-            "}";
+                ", nome='" + getNome() + "'" +
+                ", cpf='" + getCpf() + "'" +
+                " escola='" + getEscola() + "'" +
+                ", ano='" + getAno() + "'" +
+                "}";
     }
 
 }

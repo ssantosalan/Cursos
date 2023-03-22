@@ -8,9 +8,11 @@ import entities.Aluno;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Aluno aluno1 = new Aluno("Alan", "Senac", "431.331.331.00", "Último ano");
+        Aluno aluno1 = new Aluno("Alan", "431.331.331.00", "SENAC", "Último ano");
 
         System.out.println(aluno1);
+
+        System.out.println("The future is now baby");
     }
 
 }
