@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import entities.Aluno;
+import entities.Professor;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -13,6 +14,10 @@ public class App {
         System.out.println(aluno1);
 
         System.out.println("The future is now baby");
+
+        Professor professor1 = new Professor("Math", "Alan", "456");
+
+        System.out.println(professor1);
     }
 
 }
