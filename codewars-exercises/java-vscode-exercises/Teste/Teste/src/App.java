@@ -16,8 +16,9 @@ public class App {
         System.out.println("The future is now baby");
 
         Professor professor1 = new Professor("Math", "Alan", "456");
-
+        Professor professor2 = new Professor("Science", "Drops", "432");
         System.out.println(professor1);
+        System.out.println(professor2);
     }
 
 }
