@@ -6,17 +6,23 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Teste_334010d1"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
-            "mainClass": "${file}",
-            // "console": "internalConsole"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "Teste_281f6577",
+            "projectName": "Teste_281f6577"
         }
     ]
 }

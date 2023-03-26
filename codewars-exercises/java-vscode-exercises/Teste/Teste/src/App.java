@@ -17,8 +17,10 @@ public class App {
 
         Professor professor1 = new Professor("Math", "Alan", "456");
         Professor professor2 = new Professor("Science", "Drops", "432");
+        Professor professor3 = new Professor("Quimíca", "Xand", "432");
         System.out.println(professor1);
         System.out.println(professor2);
+        System.out.println(professor3);
     }
 
 }
