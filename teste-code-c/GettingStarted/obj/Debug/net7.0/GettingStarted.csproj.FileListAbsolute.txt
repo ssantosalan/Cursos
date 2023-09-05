@@ -1,0 +1,14 @@
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/bin/Debug/net7.0/GettingStarted
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/bin/Debug/net7.0/GettingStarted.deps.json
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/bin/Debug/net7.0/GettingStarted.runtimeconfig.json
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/bin/Debug/net7.0/GettingStarted.dll
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/bin/Debug/net7.0/GettingStarted.pdb
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/GettingStarted.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/GettingStarted.AssemblyInfoInputs.cache
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/GettingStarted.AssemblyInfo.cs
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/GettingStarted.csproj.CoreCompileInputs.cache
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/GettingStarted.dll
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/refint/GettingStarted.dll
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/GettingStarted.pdb
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/GettingStarted.genruntimeconfig.cache
+/Users/alansantos/Documents/Developer/Cursos/teste-code-c/GettingStarted/obj/Debug/net7.0/ref/GettingStarted.dll
