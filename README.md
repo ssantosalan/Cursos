@@ -17,6 +17,9 @@
 - https://github.com/ssantosalan/android-site-project
 - https://github.com/ssantosalan/blues-nova
 
+## Superior:
+    • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
+
 ## Cursos realizados:
 
     • Curso de Fundamentos de Lógica de Programação [15 Horas]
@@ -40,8 +43,7 @@
         PowerPoint [52 horas]
 
 ## Cursando: 
-
-    • Tecnologia em Análise e Desenvolvimento de Sistemas | SENAC
+    • Apex and Salesforce  
     • Angular
     • TypeScript
     • JavaScript
