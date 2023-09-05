@@ -5,6 +5,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello,  World!");
         System.out.println("TESTE");
+        System.out.println("TESTE");
 
         Teste teste = new Teste();
         teste.testar();
